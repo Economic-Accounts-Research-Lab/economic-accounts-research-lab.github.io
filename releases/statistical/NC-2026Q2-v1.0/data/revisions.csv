@@ -1,0 +1,2 @@
+"release_id","prior_release_id","revision_status","revision_scope","source_vintage_ids","stage4_build_ids","stage4_git_commits","release_source_commit","notes"
+"NC-2026Q2-v1.0","","inaugural_no_prior_release","none","BEA-VIN-2026-09-30","BUILD-20261019T210359Z-ff20569","ff2056952ff08f84a036421c41ca3af0035b0403","07a47ffe3a45f9402b54ab6dedc5b749ccb9d33a","Inaugural Statistical Release; no prior Statistical Release exists for comparison."

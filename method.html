@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Method – EARL</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/brand/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5d0031df7021f57b8d03aa37a6682bd9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/method.css">
+<link rel="canonical" href="https://economic-accounts-research-lab.github.io/method.html">
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/brand/brand-lockup-nav.svg" alt="EARL — Economic Accounts Research Lab" class="navbar-logo light-content">
+    <img src="./assets/brand/brand-lockup-nav.svg" alt="EARL — Economic Accounts Research Lab" class="navbar-logo dark-content">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./releases/index.html"> 
+<span class="menu-text">Releases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./income-statements.html"> 
+<span class="menu-text">Income Statements</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./charts.html"> 
+<span class="menu-text">Charts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data.html"> 
+<span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./method.html" aria-current="page"> 
+<span class="menu-text">Method</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#translation-map" id="toc-translation-map" class="nav-link active" data-scroll-target="#translation-map">How the National EARL translation works</a></li>
+  <li><a href="#what-nisp-is-doing" id="toc-what-nisp-is-doing" class="nav-link" data-scroll-target="#what-nisp-is-doing">What EARL is doing</a></li>
+  <li><a href="#national-meaning" id="toc-national-meaning" class="nav-link" data-scroll-target="#national-meaning">What the National statement means</a></li>
+  <li><a href="#scope-differences" id="toc-scope-differences" class="nav-link" data-scroll-target="#scope-differences">How the EARL views differ</a></li>
+  <li><a href="#source-to-nisp" id="toc-source-to-nisp" class="nav-link" data-scroll-target="#source-to-nisp">From official source data to EARL</a></li>
+  <li><a href="#methodological-topics" id="toc-methodological-topics" class="nav-link" data-scroll-target="#methodological-topics">Methodological topics</a></li>
+  <li><a href="#historical-reconciliation" id="toc-historical-reconciliation" class="nav-link" data-scroll-target="#historical-reconciliation">Historical Industry reconciliation</a></li>
+  <li><a href="#validation-quality-assurance" id="toc-validation-quality-assurance" class="nav-link" data-scroll-target="#validation-quality-assurance">Validation &amp; quality assurance</a></li>
+  <li><a href="#interpretation-limitations" id="toc-interpretation-limitations" class="nav-link" data-scroll-target="#interpretation-limitations">Interpretation &amp; limitations</a></li>
+  <li><a href="#revisions-versioning" id="toc-revisions-versioning" class="nav-link" data-scroll-target="#revisions-versioning">Revisions &amp; versioning</a></li>
+  <li><a href="#technical-resources" id="toc-technical-resources" class="nav-link" data-scroll-target="#technical-resources">Technical resources</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Method</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- project-identity-managed: abbreviation=EARL; full_name=Economic Accounts Research Lab -->
+<p>EARL translates official U.S. economic-account data into a business-facing income-statement framework while preserving the underlying source concepts, formulas, and provenance.</p>
+<section id="translation-map" class="level2 nisp-method-h2 nisp-method-translation-heading page-columns page-full">
+<h2 class="nisp-method-h2 nisp-method-translation-heading anchored" data-anchor-id="translation-map">How the National EARL translation works</h2>
+<p><strong>National Annual example.</strong> National is used here as the primary example. Corporate and Industry follow the same EARL translation principles, but available concepts and statement lines differ by scope and frequency.</p>
+<div class="column-body nisp-method-map-block">
+  <div class="nisp-map">
+    <div class="nisp-map-head">
+      <div>
+        <span class="nisp-map-col">Official U.S. economic-account concepts</span>
+        <span class="nisp-map-sub">Source concepts and production-account terminology</span>
+      </div>
+      <div></div>
+      <div>
+        <span class="nisp-map-col">EARL income statement</span>
+        <span class="nisp-map-sub">Business-facing presentation</span>
+      </div>
+    </div>
+
+    <div class="nisp-map-row rule">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="gross-output">Gross Output</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="gross-output">Gross Revenue</button></div>
+    </div>
+
+    <div class="nisp-map-row rule">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="intermediate-inputs">Intermediate Inputs</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="intermediate-inputs">Cost of Goods Sold</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="energy-inputs">Energy inputs</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="energy-inputs">Energy Inputs</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="materials-inputs">Materials inputs</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="materials-inputs">Materials Inputs</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="services-inputs">Purchased-services inputs</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="services-inputs">Purchased Services Inputs</button></div>
+    </div>
+
+    <div class="nisp-map-row rule">
+      <div class="bea">
+        <button class="nisp-concept-trigger" data-concept="gross-profit">
+          Gross Value Added <span class="nisp-inline-note">(GDP at national scope)</span>
+        </button>
+      </div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="gross-profit">Gross Profit</button></div>
+    </div>
+
+    <div class="nisp-map-section-label">
+      <span></span><span></span><span>Operating Expenses</span>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="wages">Wages and salaries</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="wages">Wages and Salaries</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="supplements">Supplements to wages and salaries</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="supplements">Supplements to Wages and Salaries</button></div>
+    </div>
+
+    <div class="nisp-map-row">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="compensation">Compensation of employees</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="compensation">Total Employee Compensation</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="taxes">Taxes on production and imports</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="taxes">Taxes on Production and Imports</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="subsidies">Less: Subsidies</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="subsidies">Less: Subsidies</button></div>
+    </div>
+
+    <div class="nisp-map-row subtotal-row rule">
+      <div class="bea nisp-formula-label">Components above</div>
+      <div class="link"><span class="arrow constructed"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="operating-expenses">Total Operating Expenses</button></div>
+    </div>
+
+    <div class="nisp-map-row rule">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="ebitda">Gross Operating Surplus</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp">
+        <button class="nisp-concept-trigger" data-concept="ebitda">
+          EBITDA <span class="nisp-inline-note">(Reported BEA Gross Operating Surplus)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="depreciation">Consumption of Fixed Capital</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="depreciation">Depreciation</button></div>
+    </div>
+
+    <div class="nisp-map-row">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="ebit">Net Operating Surplus</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="ebit">Operating Income (EBIT)</button></div>
+    </div>
+
+    <div class="nisp-map-row detail">
+      <div class="bea"><button class="nisp-concept-trigger" data-concept="interest">Net interest &amp; miscellaneous payments</button></div>
+      <div class="link"><span class="arrow"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="interest">Interest Expense</button></div>
+    </div>
+
+    <div class="nisp-map-row rule rule-bottom">
+      <div class="bea nisp-formula-label">EBIT − Interest Expense</div>
+      <div class="link"><span class="arrow dotted"></span></div>
+      <div class="nisp"><button class="nisp-concept-trigger" data-concept="ebt">Income Before Taxes (EBT)</button></div>
+    </div>
+
+    <div class="nisp-map-legend" aria-label="Translation map legend">
+      <span class="legend-item">
+        <span class="legend-glyph"><span class="arrow"></span></span>
+        Direct source / translation
+      </span>
+      <span class="legend-item">
+        <span class="legend-glyph"><span class="arrow constructed"></span></span>
+        Constructed subtotal
+      </span>
+      <span class="legend-item">
+        <span class="legend-glyph"><span class="arrow dotted"></span></span>
+        EARL-derived measure
+      </span>
+    </div>
+
+    <div class="nisp-map-cta">
+      <a class="nisp-map-btn" href="income-statements.html">Explore Income Statements →</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="no-row-height column-margin column-container page-columns page-full"><div class="nisp-method-detail-block page-columns page-full">
+
+
+  <aside class="nisp-map-detail" aria-live="polite" aria-label="Selected concept explanation">
+    <span class="nisp-detail-eyebrow">Selected concept</span>
+    <h3 id="nisp-detail-title" class="anchored">Gross Revenue</h3>
+    <dl>
+      <div><dt>Official concept</dt><dd id="nisp-detail-source-concept">Gross Output</dd></div>
+      <div><dt>What it means</dt><dd id="nisp-detail-meaning">The value of goods and services produced by the domestic economy, principally measured using industry sales or receipts.</dd></div>
+      <div><dt>Why EARL uses this label</dt><dd id="nisp-detail-why">Gross Output is the closest economy-wide top-line analogue to revenue.</dd></div>
+      <div><dt>Relationship</dt><dd id="nisp-detail-type"><span class="nisp-detail-badge">Translate</span></dd></div>
+      <div><dt>Availability</dt><dd id="nisp-detail-availability">National Annual and Quarterly</dd></div>
+      <div><dt>Source</dt><dd id="nisp-detail-source">U.S. BEA · GDP-by-Industry · Table 15 · line 1 (All Industries)</dd></div>
+      <div><dt>Interpretation</dt><dd id="nisp-detail-interpretation">Includes sales between industries, so economy-wide Gross Revenue is not equivalent to consolidated corporate revenue.</dd></div>
+    </dl>
+    <div class="nisp-detail-links">
+      <a id="nisp-detail-bea" href="https://www.bea.gov/help/glossary?page=3" target="_blank" rel="noopener">BEA definition ↗</a>
+      <a href="data.html">View data &amp; metadata →</a>
+    </div>
+  </aside>
+</div></div><script>
+(function () {
+  const concepts = {
+    "gross-output": {
+      title: "Gross Revenue",
+      sourceConcept: "Gross Output",
+      meaning: "The value of goods and services produced by the domestic economy, principally measured using industry sales or receipts.",
+      why: "Gross Output is the closest economy-wide top-line analogue to revenue.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · GDP-by-Industry · Table 15 · line 1 (All Industries)",
+      interpretation: "Includes sales between industries, so economy-wide Gross Revenue is not equivalent to consolidated corporate revenue.",
+      bea: "https://www.bea.gov/help/glossary?page=3"
+    },
+    "intermediate-inputs": {
+      title: "Cost of Goods Sold",
+      sourceConcept: "Intermediate Inputs",
+      meaning: "Goods and services used up in producing other goods and services rather than sold for final consumption.",
+      why: "Intermediate Inputs are the purchased production inputs consumed in generating output, making them the closest economy-wide analogue to COGS.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · GDP-by-Industry · Table 20 · line 1 (All Industries)",
+      interpretation: "This is an analytical analogue; BEA Intermediate Inputs do not follow company-specific COGS classification rules.",
+      bea: "https://www.bea.gov/help/faq/185"
+    },
+    "energy-inputs": {
+      title: "Energy Inputs",
+      sourceConcept: "Energy inputs",
+      meaning: "The energy component of Intermediate Inputs used in production.",
+      why: "EARL preserves the official input component directly within the COGS section of the statement.",
+      type: "Translate",
+      availability: "National Annual; detailed input components may lag headline National series",
+      source: "U.S. BEA · GDP-by-Industry · Table 25 · line 7",
+      interpretation: "This is a detailed component of Intermediate Inputs rather than a separate expense category defined under company accounting rules.",
+      bea: "https://www.bea.gov/resources/guide-interactive-gdp-industry-accounts-tables"
+    },
+    "materials-inputs": {
+      title: "Materials Inputs",
+      sourceConcept: "Materials inputs",
+      meaning: "The materials component of Intermediate Inputs used in production.",
+      why: "EARL preserves the official input component directly within the COGS section of the statement.",
+      type: "Translate",
+      availability: "National Annual; detailed input components may lag headline National series",
+      source: "U.S. BEA · GDP-by-Industry · Table 25 · line 8",
+      interpretation: "This is a detailed component of Intermediate Inputs rather than a separate expense category defined under company accounting rules.",
+      bea: "https://www.bea.gov/resources/guide-interactive-gdp-industry-accounts-tables"
+    },
+    "services-inputs": {
+      title: "Purchased Services Inputs",
+      sourceConcept: "Purchased-services inputs",
+      meaning: "The purchased-services component of Intermediate Inputs used in production.",
+      why: "EARL preserves the official input component directly within the COGS section of the statement.",
+      type: "Translate",
+      availability: "National Annual; detailed input components may lag headline National series",
+      source: "U.S. BEA · GDP-by-Industry · Table 25 · line 9",
+      interpretation: "This is a detailed component of Intermediate Inputs rather than a separate expense category defined under company accounting rules.",
+      bea: "https://www.bea.gov/resources/guide-interactive-gdp-industry-accounts-tables"
+    },
+    "gross-profit": {
+      title: "Gross Profit",
+      sourceConcept: "Gross Value Added; sourced nationally from Gross Domestic Product",
+      meaning: "The value created by domestic production after subtracting Intermediate Inputs from Gross Output.",
+      why: "Value Added is the economy-wide residual after purchased inputs, making it the closest analogue to Gross Profit.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.3.5 · line 1 (Gross domestic product)",
+      interpretation: "National Gross Profit is not retained business profit. Economy-wide value added is distributed among labor compensation, production taxes net of subsidies, and gross operating surplus.",
+      bea: "https://www.bea.gov/help/faq/184"
+    },
+    "wages": {
+      title: "Wages and Salaries",
+      sourceConcept: "Wages and salaries",
+      meaning: "Cash and in-kind remuneration of employees, including items such as commissions, tips, bonuses, and qualifying compensation in kind.",
+      why: "The EARL statement retains the official labor-cost component directly.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 3",
+      interpretation: "This is an economy-wide labor-compensation concept measured within the national accounts.",
+      bea: "https://www.bea.gov/help/glossary/wages-and-salaries"
+    },
+    "supplements": {
+      title: "Supplements to Wages and Salaries",
+      sourceConcept: "Supplements to wages and salaries",
+      meaning: "Employer contributions for employee pension and insurance funds and for government social insurance.",
+      why: "The EARL statement retains the official labor-cost component directly.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 6",
+      interpretation: "This complements Wages and Salaries in the broader Employee Compensation total.",
+      bea: "https://www.bea.gov/help/glossary/supplements-wages-and-salaries"
+    },
+    "compensation": {
+      title: "Total Employee Compensation",
+      sourceConcept: "Compensation of employees, paid",
+      meaning: "Total remuneration payable by employers to employees, consisting of Wages and Salaries plus employer supplements.",
+      why: "EARL presents the official aggregate labor-cost concept as the compensation subtotal within Operating Expenses.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 2",
+      interpretation: "Compensation is measured on a national-accounts basis and is not limited to cash wages.",
+      bea: "https://www.bea.gov/help/glossary/compensation-employees"
+    },
+    "taxes": {
+      title: "Taxes on Production and Imports",
+      sourceConcept: "Taxes on production and imports",
+      meaning: "Production-related taxes such as excise taxes, customs duties, sales taxes, property taxes, licenses, severance taxes, and special assessments.",
+      why: "EARL retains this official production-cost component as a separate Operating Expenses line.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 7",
+      interpretation: "These are production-related taxes, not corporate income taxes.",
+      bea: "https://www.bea.gov/help/glossary/taxes-production-and-imports"
+    },
+    "subsidies": {
+      title: "Less: Subsidies",
+      sourceConcept: "Less: Subsidies",
+      meaning: "Government monetary grants paid to private businesses or government enterprises.",
+      why: "Subsidies reduce the production-tax component of value added and are shown explicitly as a deduction in the EARL statement.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 8",
+      interpretation: "The label makes the subtraction explicit while preserving the underlying source value and provenance.",
+      bea: "https://www.bea.gov/help/glossary/subsidies"
+    },
+    "operating-expenses": {
+      title: "Total Operating Expenses",
+      sourceConcept: "Constructed from Employee Compensation + Taxes on Production and Imports − Subsidies",
+      meaning: "A transparent EARL subtotal combining the principal labor and production-tax components shown directly above it.",
+      why: "The subtotal creates a familiar operating-expense bridge while keeping every underlying component visible and traceable.",
+      type: "Construct",
+      availability: "National Annual and Quarterly",
+      source: "EARL formula using source-backed NIPA components",
+      interpretation: "There is no single BEA series called Total Operating Expenses in this construction; the subtotal is calculated from the displayed components.",
+      bea: "https://www.bea.gov/help/glossary/income-approach"
+    },
+    "ebitda": {
+      title: "EBITDA (Reported BEA Gross Operating Surplus)",
+      sourceConcept: "Gross Operating Surplus",
+      meaning: "The value remaining after Intermediate Inputs, Employee Compensation, and Taxes on Production and Imports less Subsidies are deducted from output.",
+      why: "Its position before economic depreciation and financing costs makes Gross Operating Surplus useful as an economy-wide EBITDA analogue.",
+      type: "Translate",
+      availability: "National Annual; National Quarterly uses a separate EBITDA (Calculated) series",
+      source: "U.S. BEA · GDP-by-Industry · Table 25 · line 5",
+      interpretation: "Gross Operating Surplus includes components broader than company EBITDA and should not be interpreted as the sum of reported corporate EBITDA.",
+      bea: "https://www.bea.gov/help/glossary?page=3"
+    },
+    "depreciation": {
+      title: "Depreciation",
+      sourceConcept: "Consumption of Fixed Capital",
+      meaning: "The decline in fixed-asset value due to wear, obsolescence, accidental damage, and aging.",
+      why: "BEA describes Consumption of Fixed Capital as its economic measure of depreciation.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 21",
+      interpretation: "BEA measures economic depreciation at current cost; company book depreciation is commonly based on historical cost.",
+      bea: "https://www.bea.gov/help/glossary/depreciation"
+    },
+    "ebit": {
+      title: "Operating Income (EBIT)",
+      sourceConcept: "Net Operating Surplus",
+      meaning: "A profits-like measure after Employee Compensation, production taxes net of subsidies, and Consumption of Fixed Capital, but before financing costs and business transfer payments.",
+      why: "Its position after economic depreciation and before financing costs makes Net Operating Surplus useful as an EBIT analogue.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 9",
+      interpretation: "This remains an economy-wide national-accounts concept rather than company-reported Operating Income.",
+      bea: "https://www.bea.gov/help/glossary/net-operating-surplus"
+    },
+    "interest": {
+      title: "Interest Expense",
+      sourceConcept: "Net interest and miscellaneous payments, domestic industries",
+      meaning: "A BEA net-interest and miscellaneous-payment concept placed in the Interest Expense position of the EARL statement.",
+      why: "The placement creates a familiar financing-cost bridge from Operating Income to the EARL pre-tax analytical measure.",
+      type: "Translate",
+      availability: "National Annual and Quarterly",
+      source: "U.S. BEA · NIPA Table 1.10 · line 11",
+      interpretation: "The source is net and includes miscellaneous payments; it is not aggregate gross corporate interest expense, and negative values may economically behave as interest income.",
+      bea: "https://www.bea.gov/help/glossary/net-operating-surplus"
+    },
+    "ebt": {
+      title: "Income Before Taxes (EBT)",
+      sourceConcept: "EARL calculation: Operating Income (EBIT) − Interest Expense",
+      meaning: "An analytical pre-tax measure calculated by EARL from defined statement lines.",
+      why: "The calculation extends the National statement into a familiar pre-tax-income position using an explicit, reproducible formula.",
+      type: "Derive",
+      availability: "National Annual and Quarterly",
+      source: "EARL formula using Operating Income (EBIT) and Interest Expense",
+      interpretation: "This is not an official BEA EBT series and should not be equated with BEA corporate profits before tax.",
+      bea: "https://www.bea.gov/help/glossary/corporate-profits-inventory-valuation-and-capital-consumption-adjustments"
+    }
+  };
+
+  const fields = {
+    title: document.getElementById("nisp-detail-title"),
+    sourceConcept: document.getElementById("nisp-detail-source-concept"),
+    meaning: document.getElementById("nisp-detail-meaning"),
+    why: document.getElementById("nisp-detail-why"),
+    type: document.getElementById("nisp-detail-type"),
+    availability: document.getElementById("nisp-detail-availability"),
+    source: document.getElementById("nisp-detail-source"),
+    interpretation: document.getElementById("nisp-detail-interpretation"),
+    bea: document.getElementById("nisp-detail-bea")
+  };
+
+  function showConcept(key) {
+    const item = concepts[key];
+    if (!item || !fields.title) return;
+    fields.title.textContent = item.title;
+    fields.sourceConcept.textContent = item.sourceConcept;
+    fields.meaning.textContent = item.meaning;
+    fields.why.textContent = item.why;
+    fields.type.innerHTML = '<span class="nisp-detail-badge">' + item.type + '</span>';
+    fields.availability.textContent = item.availability;
+    fields.source.textContent = item.source;
+    fields.interpretation.textContent = item.interpretation;
+    fields.bea.href = item.bea;
+    document.querySelectorAll(".nisp-concept-trigger").forEach(el => {
+      el.classList.toggle("is-active", el.dataset.concept === key);
+    });
+  }
+
+  document.querySelectorAll(".nisp-concept-trigger").forEach(trigger => {
+    ["click", "focus", "mouseenter"].forEach(evt => {
+      trigger.addEventListener(evt, () => showConcept(trigger.dataset.concept));
+    });
+  });
+
+  showConcept("gross-output");
+})();
+</script>
+</section>
+<section id="what-nisp-is-doing" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="what-nisp-is-doing">What EARL is doing</h2>
+<p>The translation above involves three distinct operations. Each published line is either source-supplied or transparently calculated from defined EARL concepts.</p>
+<div class="nisp-cards nisp-operation-cards">
+  <div class="nisp-card">
+    <span class="nisp-card-title">Translate</span>
+    <p class="nisp-card-summary">Present official economic-account concepts through a business-facing statement framework.</p>
+    <p class="nisp-card-body">Many EARL rows preserve an official source value while presenting it with familiar financial-statement terminology. The original economic concept remains visible through EARL methodology and metadata.</p>
+  </div>
+  <div class="nisp-card">
+    <span class="nisp-card-title">Construct</span>
+    <p class="nisp-card-summary">Build transparent statement subtotals from defined components.</p>
+    <p class="nisp-card-body">Some EARL lines combine source-backed components according to an explicit formula. The underlying components remain visible and traceable rather than being hidden inside the subtotal.</p>
+  </div>
+  <div class="nisp-card">
+    <span class="nisp-card-title">Derive</span>
+    <p class="nisp-card-summary">Calculate additional analytical measures from defined EARL lines.</p>
+    <p class="nisp-card-body">EARL derives selected measures using explicit formulas, including margins and analytical profit measures. Derived measures are identified as such in the metadata.</p>
+  </div>
+</div>
+</section>
+<section id="national-meaning" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="national-meaning">What the National statement means</h2>
+<p>The National EARL statement applies a business-facing income-statement structure to <strong>economy-wide U.S. domestic production</strong>. Its measures come from BEA’s national and industry economic accounts rather than from company financial statements.</p>
+<p>EARL terminology is intended to make relationships among production, purchased inputs, value added, labor costs, production taxes, and capital income easier to interpret. The labels are analytical analogues, not assertions that national-account concepts are formally identical to company-accounting measures.</p>
+<section id="national-gross-revenue" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="national-gross-revenue">National Gross Revenue</h3>
+<p><strong>Gross Revenue is EARL’s presentation of BEA Gross Output.</strong> Gross Output measures the value of goods and services produced and is principally measured using industry sales or receipts. It includes sales to final users as well as sales between industries. <a href="https://www.bea.gov/help/glossary?page=3">BEA definition</a></p>
+<p>This makes Gross Output useful as an economy-wide top-line revenue analogue. Unlike consolidated company revenue, however, transactions between industries remain in Gross Output. The same intermediate product can therefore appear at multiple stages of the production chain. <a href="https://www.bea.gov/help/faq/1197">BEA explanation</a></p>
+</section>
+<section id="national-cost-of-goods-sold" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="national-cost-of-goods-sold">National Cost of Goods Sold</h3>
+<p><strong>Cost of Goods Sold is EARL’s presentation of BEA Intermediate Inputs.</strong> Intermediate Inputs are goods and services used in producing other goods and services rather than sold for final consumption. They include energy, materials, and purchased services. <a href="https://www.bea.gov/help/faq/185">BEA definition</a></p>
+<p>EARL uses the COGS label because these inputs represent purchased production inputs consumed in generating output. The analogy does not imply that BEA Intermediate Inputs follow company-specific COGS classification rules.</p>
+</section>
+<section id="national-gross-profit" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="national-gross-profit">National Gross Profit</h3>
+<p><strong>Gross Profit is EARL’s presentation of economy-wide value added.</strong> Value added equals Gross Output less Intermediate Inputs. Across all industries, the sum of value added equals GDP. <a href="https://www.bea.gov/help/faq/184">BEA definition</a></p>
+<p>National Gross Profit should therefore not be interpreted as an amount retained by businesses. It represents new value created through domestic production and is distributed among employee compensation, taxes on production and imports less subsidies, and gross operating surplus. <a href="https://www.bea.gov/resources/guide-interactive-gdp-industry-accounts-tables">BEA GDP-by-Industry guide</a></p>
+</section>
+<section id="operating-expenses" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="operating-expenses">Operating Expenses</h3>
+<p>Below Gross Profit, EARL presents the principal labor and production-tax components individually:</p>
+<ul>
+<li><strong>Wages and Salaries</strong></li>
+<li><strong>Supplements to Wages and Salaries</strong></li>
+<li><strong>Total Employee Compensation</strong></li>
+<li><strong>Taxes on Production and Imports</strong></li>
+<li><strong>Less: Subsidies</strong></li>
+</ul>
+<p>Employee Compensation consists of wages and salaries plus employer supplements such as pension, insurance, and government social-insurance contributions. <a href="https://www.bea.gov/help/glossary/compensation-employees">BEA definition</a></p>
+<p>Taxes on Production and Imports include items such as excise taxes, customs duties, sales taxes, property taxes, licenses, severance taxes, and special assessments. They are distinct from corporate income taxes. Subsidies are monetary grants paid by government agencies to private businesses or government enterprises. <a href="https://www.bea.gov/help/glossary/taxes-production-and-imports">BEA taxes definition</a> · <a href="https://www.bea.gov/help/glossary/subsidies">BEA subsidies definition</a></p>
+<p>EARL then constructs <strong>Total Operating Expenses</strong> as:</p>
+<blockquote class="blockquote">
+<p><strong>Total Employee Compensation + Taxes on Production and Imports − Subsidies</strong></p>
+</blockquote>
+<p>The underlying components remain visible in the statement.</p>
+</section>
+<section id="national-ebitda" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="national-ebitda">National EBITDA</h3>
+<p><strong>For National Annual, EARL presents reported BEA Gross Operating Surplus as the primary EBITDA analogue.</strong> Gross Operating Surplus is derived after Intermediate Inputs, Employee Compensation, and Taxes on Production and Imports less Subsidies are deducted from output. It includes Consumption of Fixed Capital and several business- and property-income components. <a href="https://www.bea.gov/help/glossary?page=3">BEA definition</a></p>
+<p>Its position in the production-income structure makes it useful as an economy-wide EBITDA analogue, but it is not equivalent to a sum of company-reported EBITDA.</p>
+<p>For National Quarterly, EARL instead presents <strong>EBITDA (Calculated)</strong>:</p>
+<blockquote class="blockquote">
+<p><strong>Gross Profit − Total Operating Expenses</strong></p>
+</blockquote>
+<p>Reported Gross Operating Surplus and calculated EBITDA remain separately identified in EARL metadata.</p>
+</section>
+<section id="depreciation" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="depreciation">Depreciation</h3>
+<p><strong>EARL presents BEA Consumption of Fixed Capital as Depreciation.</strong> Consumption of Fixed Capital measures the decline in fixed-asset value caused by wear, obsolescence, accidental damage, and aging. BEA describes it as its economic measure of depreciation. <a href="https://www.bea.gov/help/glossary/consumption-fixed-capital-cfc">BEA CFC definition</a></p>
+<p>The concepts are closely related, but BEA’s measure is based on current-cost economic depreciation rather than company book depreciation based on historical cost. <a href="https://www.bea.gov/help/glossary/depreciation">BEA depreciation definition</a></p>
+</section>
+<section id="operating-income-ebit" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="operating-income-ebit">Operating Income (EBIT)</h3>
+<p><strong>EARL presents Net Operating Surplus as Operating Income (EBIT).</strong> BEA describes Net Operating Surplus as a profits-like measure after Employee Compensation, Taxes on Production and Imports less Subsidies, and Consumption of Fixed Capital, but before financing costs and business transfer payments. <a href="https://www.bea.gov/help/glossary/net-operating-surplus">BEA definition</a></p>
+<p>This makes it useful as an EBIT analogue while preserving the distinction from company-reported operating income.</p>
+</section>
+<section id="interest-expense" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="interest-expense">Interest Expense</h3>
+<p><strong>EARL presents BEA Net Interest and Miscellaneous Payments, Domestic Industries in the Interest Expense position of the statement.</strong> The source is a net national-accounts concept and includes miscellaneous payments. It should therefore not be interpreted as aggregate gross corporate interest expense.</p>
+</section>
+<section id="income-before-taxes" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="income-before-taxes">Income Before Taxes</h3>
+<p><strong>Income Before Taxes (EBT) is an analytical measure derived by EARL:</strong></p>
+<blockquote class="blockquote">
+<p><strong>Operating Income (EBIT) − Interest Expense</strong></p>
+</blockquote>
+<p>It is not an official BEA EBT series and should not be equated with BEA corporate profits before tax. BEA’s corporate-profit measure applies specifically to entities treated as corporations and follows a different profit bridge. <a href="https://www.bea.gov/help/glossary/corporate-profits-inventory-valuation-and-capital-consumption-adjustments">BEA corporate profits definition</a></p>
+</section>
+<section id="what-does-national-cover" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="what-does-national-cover">What does “National” cover?</h3>
+<p><strong>The National statement represents economy-wide domestic U.S. production—not only incorporated businesses.</strong> BEA’s GDP-by-Industry accounts measure the contribution of private industries and government to U.S. GDP. <a href="https://www.bea.gov/resources/learning-center/what-to-know-industries">BEA industry overview</a></p>
+<p>National EARL should therefore be interpreted as an analytical income statement for domestic production, not as a consolidation of U.S. company financial statements.</p>
+</section>
+</section>
+<section id="scope-differences" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="scope-differences">How the EARL views differ</h2>
+<p>EARL uses a common business-facing framework across <strong>National, Corporate, and Industry</strong> data. The underlying source concepts are not identical, however, so the three views do not contain exactly the same statement lines.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>National</th>
+<th>Corporate</th>
+<th>Industry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Perspective</td>
+<td>Economy-wide domestic production</td>
+<td>Domestic corporate sector</td>
+<td>Individual industries and industry aggregates</td>
+</tr>
+<tr class="even">
+<td>Gross Revenue / COGS</td>
+<td>Available</td>
+<td>Statement begins below these concepts</td>
+<td>Available</td>
+</tr>
+<tr class="odd">
+<td>Gross Profit</td>
+<td>Available</td>
+<td>Available</td>
+<td>Available</td>
+</tr>
+<tr class="even">
+<td>Operating-cost detail</td>
+<td>Detailed</td>
+<td>Corporate-specific structure</td>
+<td>More limited</td>
+</tr>
+<tr class="odd">
+<td>Annual EBITDA</td>
+<td>Reported GOS basis</td>
+<td>Calculated</td>
+<td>Reported GOS basis</td>
+</tr>
+<tr class="even">
+<td>Quarterly EBITDA</td>
+<td>Calculated</td>
+<td>Calculated</td>
+<td>Not part of the primary quarterly statement</td>
+</tr>
+<tr class="odd">
+<td>Depreciation / EBIT</td>
+<td>Available</td>
+<td>Available</td>
+<td>Not part of the primary Industry statement</td>
+</tr>
+<tr class="even">
+<td>Corporate tax / dividend bridge</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Industry selection</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<section id="national" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="national">National</h3>
+<p>National provides the broadest economy-wide production view and extends from Gross Revenue through Income Before Taxes.</p>
+</section>
+<section id="corporate" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="corporate">Corporate</h3>
+<p>Corporate focuses on the domestic corporate sector. BEA defines corporate business according to entities treated as corporations in the national accounts. <a href="https://www.bea.gov/help/glossary/corporate-business">BEA corporate-business definition</a></p>
+<p>The EARL Corporate statement begins at Gross Profit because its source structure does not provide the same Gross Revenue/COGS presentation used in the National and Industry views. It then provides a deeper corporation-specific bridge through corporate income taxes, Net Income, Dividends, and Retained Earnings.</p>
+</section>
+<section id="industry" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="industry">Industry</h3>
+<p>Industry applies the production-side framework to individual industries and industry aggregates.</p>
+<p>Annual Industry data support the fuller production structure, including Gross Revenue, COGS, Gross Profit, Operating Expenses, reported-GOS EBITDA, and margins. Quarterly Industry currently supports the shorter production-side statement through Gross Profit and Gross Margin.</p>
+</section>
+<section id="why-annual-and-quarterly-statements-can-differ" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="why-annual-and-quarterly-statements-can-differ">Why annual and quarterly statements can differ</h3>
+<p>EARL presents only concepts supported for the selected scope and frequency. A quarterly statement is therefore <strong>not necessarily the annual statement repeated four times per year</strong>.</p>
+<p>Examples include:</p>
+<ul>
+<li>detailed Energy, Materials, and Purchased Services inputs are available annually but not in the corresponding National or Industry quarterly statement;</li>
+<li>National Annual uses reported Gross Operating Surplus as its primary EBITDA measure, while National Quarterly uses EBITDA (Calculated);</li>
+<li>Industry Quarterly currently ends at Gross Profit and Gross Margin.</li>
+</ul>
+<p>EARL preserves these differences rather than filling unsupported statement lines simply to create a uniform appearance.</p>
+</section>
+</section>
+<section id="source-to-nisp" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="source-to-nisp">From official source data to EARL</h2>
+<div class="nisp-method-flow" aria-label="EARL data process">
+  <div class="nisp-flow-step"><span class="nisp-flow-num">1</span><strong class="nisp-flow-title">Official source data</strong><span class="nisp-flow-copy">BEA source tables and definitions</span></div>
+  <span class="nisp-flow-arrow" aria-hidden="true">→</span>
+  <div class="nisp-flow-step"><span class="nisp-flow-num">2</span><strong class="nisp-flow-title">Processing &amp; provenance</strong><span class="nisp-flow-copy">Source matching, units, history, lineage</span></div>
+  <span class="nisp-flow-arrow" aria-hidden="true">→</span>
+  <div class="nisp-flow-step"><span class="nisp-flow-num">3</span><strong class="nisp-flow-title">EARL concepts &amp; calculations</strong><span class="nisp-flow-copy">Business-facing labels and defined formulas</span></div>
+  <span class="nisp-flow-arrow" aria-hidden="true">→</span>
+  <div class="nisp-flow-step"><span class="nisp-flow-num">4</span><strong class="nisp-flow-title">Quality checks</strong><span class="nisp-flow-copy">Structure, formulas, provenance, accounting relationships</span></div>
+  <span class="nisp-flow-arrow" aria-hidden="true">→</span>
+  <div class="nisp-flow-step"><span class="nisp-flow-num">5</span><strong class="nisp-flow-title">Public data &amp; metadata</strong><span class="nisp-flow-copy">Statements, charts, data, and releases</span></div>
+</div>
+<section id="official-source-data" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="official-source-data">Official source data</h3>
+<p>EARL begins with official source tables identified through its source metadata. Data retrieval is separated from EARL’s business-facing terminology and calculations so that the original source observations remain distinguishable from later transformations.</p>
+</section>
+<section id="processing-provenance" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="processing-provenance">Processing &amp; provenance</h3>
+<p>Source observations are matched to EARL concepts using documented metadata. The processing layer verifies expected source information and units, combines current and historical source layers where needed, and records provenance for populated observations.</p>
+<p>Missing observations remain explicit rather than being silently inferred merely to complete a statement.</p>
+</section>
+<section id="earl-concepts-calculations" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="earl-concepts-calculations">EARL concepts &amp; calculations</h3>
+<p>After source observations have been identified, EARL applies its public terminology and calculates explicitly defined derived measures. Formulas refer to defined EARL concepts, for example:</p>
+<blockquote class="blockquote">
+<p><strong>Total Operating Expenses = Total Employee Compensation + Taxes on Production and Imports − Subsidies</strong></p>
+<p><strong>Gross Margin = Gross Profit / Gross Revenue</strong></p>
+</blockquote>
+<p>Derived measures remain identifiable as calculations rather than source-supplied values.</p>
+</section>
+<section id="quality-checks" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="quality-checks">Quality checks</h3>
+<p>The data process includes checks for source matching, units, duplicate observations, numerical validity, provenance, defined formulas, and accounting relationships.</p>
+<p>Public releases receive additional review of displayed values, labels, dates, units, source information, and rendered outputs.</p>
+</section>
+<section id="public-data-metadata" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="public-data-metadata">Public data &amp; metadata</h3>
+<p>Public EARL metadata document what each published series means and how it was produced. Depending on the series, the metadata can identify:</p>
+<ul>
+<li>the EARL label;</li>
+<li>the official source concept;</li>
+<li>whether the value is source-supplied or EARL-derived;</li>
+<li>the formula and input series for derived measures;</li>
+<li>units and availability;</li>
+<li>the source agency, table, and source line;</li>
+<li>methodology and interpretation notes.</li>
+</ul>
+<p>A separate statement layout defines how the same concepts appear in the public Income Statements, including row order, hierarchy, indentation, and presentation signs.</p>
+</section>
+</section>
+<section id="methodological-topics" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="methodological-topics">Methodological topics</h2>
+<div class="nisp-method-accordion">
+  <details class="nisp-method-details" open="">
+    <summary>Source data &amp; provenance</summary>
+    <div class="nisp-method-details-body">
+      <p>EARL primarily uses official data from the U.S. Bureau of Economic Analysis, including the National Income and Product Accounts and Industry Economic Accounts.</p>
+      <p>Source information is retained so users can trace published measures back to the relevant official concept and table.</p>
+    </div>
+  </details>
+
+  <details class="nisp-method-details">
+    <summary>Statement construction</summary>
+    <div class="nisp-method-details-body">
+      <p>EARL distinguishes source-supplied concepts from constructed subtotals and derived analytical measures.</p>
+      <p>The data and metadata determine what a measure is; the statement layout determines how it is displayed.</p>
+    </div>
+  </details>
+
+  <details class="nisp-method-details">
+    <summary>Frequency &amp; availability</summary>
+    <div class="nisp-method-details-body">
+      <p>Availability differs across scopes, frequencies, source tables, and historical periods.</p>
+      <p>An unavailable observation is not treated as zero. Where a concept is not supported for a given statement, EARL leaves it unavailable rather than filling the gap with an unrelated substitute.</p>
+    </div>
+  </details>
+
+  <details class="nisp-method-details">
+    <summary>Industry structure</summary>
+    <div class="nisp-method-details-body">
+      <p>Industry observations are organized through a maintained hierarchy connecting individual industries, aggregates, and the All Industries view.</p>
+      <p>This allows the same EARL concept to retain a consistent identity while being observed for different industries.</p>
+    </div>
+  </details>
+
+  <details class="nisp-method-details">
+    <summary>Price &amp; quantity measures</summary>
+    <div class="nisp-method-details-body">
+      <p>EARL also uses BEA chain-type price and quantity indexes for selected Gross Output and Intermediate Input concepts. These data support analysis that distinguishes nominal changes from changes in prices and quantities.</p>
+      <p>More detailed decomposition methodology will be documented alongside the associated analytical products.</p>
+    </div>
+  </details>
+
+  <details class="nisp-method-details">
+    <summary>Derived analyses</summary>
+    <div class="nisp-method-details-body">
+      <p>EARL calculates selected ratios and analytical measures from explicitly defined inputs.</p>
+      <p>Examples include Gross Margin, EBITDA Margin, Operating Margin, EBT Margin, Effective Tax Rate, Payout Ratio, and Retention Ratio. Availability varies by statement scope and frequency.</p>
+    </div>
+  </details>
+</div>
+</section>
+<section id="historical-reconciliation" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="historical-reconciliation">Historical Industry reconciliation</h2>
+<p>Historical BEA Industry data do not always use the same industry classifications or coverage as current releases. EARL therefore uses a documented reconciliation process to extend selected annual Industry series while preserving the current industry structure and source provenance.</p>
+<section id="current-taxonomy-as-the-reference" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="current-taxonomy-as-the-reference">Current taxonomy as the reference</h3>
+<p>The current BEA industry taxonomy serves as the reference structure. Historical categories are connected to the current hierarchy only where a defensible mapping exists.</p>
+</section>
+<section id="historical-source" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="historical-source">Historical source</h3>
+<p>The historical layer uses BEA <strong>Historical Industry Accounts released on November 30, 2021</strong>.</p>
+</section>
+<section id="current-dollar-series" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="current-dollar-series">Current-dollar series</h3>
+<p>For the reconciled annual Industry series, official historical current-dollar values are used through <strong>1996</strong>, while current BEA data take precedence from <strong>1997 onward</strong>.</p>
+</section>
+<section id="price-and-quantity-indexes" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="price-and-quantity-indexes">Price and quantity indexes</h3>
+<p>Historical price and quantity indexes retain their historical growth patterns but are re-anchored to the current series using the 1997 overlap.</p>
+<p>Conceptually:</p>
+<blockquote class="blockquote">
+<p><strong>Re-anchored historical index = Historical index × (Current 1997 index / Historical 1997 index)</strong></p>
+</blockquote>
+</section>
+<section id="no-fabricated-historical-splits" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="no-fabricated-historical-splits">No fabricated historical splits</h3>
+<p>When a historical category combines activities that later appear as several separate industries, EARL does not allocate the historical value among those modern industries without an official basis.</p>
+<p>If a defensible one-to-one history cannot be established, the historical observation remains unavailable.</p>
+</section>
+<section id="statement-components" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="statement-components">Statement components</h3>
+<p>The historical reconciliation also provides a consistent value-added block—Employee Compensation, Taxes on Production and Imports less Subsidies, and Gross Operating Surplus—from 1987 onward where supported by the source material.</p>
+</section>
+<section id="provenance" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="provenance">Provenance</h3>
+<p>The reconciliation preserves documentation of the historical source, taxonomy crosswalk, current-versus-historical precedence, index anchors, omissions, and observation provenance.</p>
+</section>
+</section>
+<section id="validation-quality-assurance" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="validation-quality-assurance">Validation &amp; quality assurance</h2>
+<p>EARL validates both the underlying data and the public presentation.</p>
+<p>Validation can include:</p>
+<ul>
+<li>comparison with official source evidence;</li>
+<li>verification of source mappings and metadata;</li>
+<li>formula and accounting-identity checks;</li>
+<li>expected-missingness checks;</li>
+<li>historical-source and reconciliation checks;</li>
+<li>statement and chart value checks;</li>
+<li>review of labels, dates, units, scaling, sources, and rounding;</li>
+<li>clean website and document rendering.</li>
+</ul>
+<p>Validation documentation is retained so that the evidence supporting a published EARL release can be reviewed.</p>
+</section>
+<section id="interpretation-limitations" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="interpretation-limitations">Interpretation &amp; limitations</h2>
+<section id="analytical-analogues-not-company-accounting-identities" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="analytical-analogues-not-company-accounting-identities">Analytical analogues, not company-accounting identities</h3>
+<p>EARL uses familiar business terminology to make economic-account relationships easier to interpret. The labels do not imply that national-account measures follow GAAP, IFRS, tax-accounting, or company-reporting definitions.</p>
+</section>
+<section id="aggregate-accounting-differs-from-firm-accounting" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="aggregate-accounting-differs-from-firm-accounting">Aggregate accounting differs from firm accounting</h3>
+<p>The National statement describes domestic economic production rather than a consolidation of company financial statements. For example:</p>
+<ul>
+<li>Gross Revenue includes inter-industry transactions;</li>
+<li>Gross Profit represents economy-wide value added;</li>
+<li>reported-GOS EBITDA contains components broader than company EBITDA;</li>
+<li>Interest Expense is based on a net national-account source concept;</li>
+<li>National EBT is an analytical calculation defined by EARL rather than an official BEA measure.</li>
+</ul>
+</section>
+<section id="availability-is-not-uniform" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="availability-is-not-uniform">Availability is not uniform</h3>
+<p>A concept may be available annually but not quarterly, available in one EARL scope but not another, or published only as supplemental information. EARL preserves those differences rather than creating unsupported values solely to make statements look identical.</p>
+</section>
+<section id="missing-is-not-zero" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="missing-is-not-zero">Missing is not zero</h3>
+<p>An unavailable observation should not be interpreted as zero. Missing data remain explicitly unavailable unless a documented EARL calculation provides the value.</p>
+</section>
+<section id="source-data-can-be-revised" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="source-data-can-be-revised">Source data can be revised</h3>
+<p>BEA periodically revises economic statistics as additional information becomes available and as statistical methods or classifications change. EARL therefore distinguishes changes in the official source data from changes made within EARL itself.</p>
+</section>
+</section>
+<section id="revisions-versioning" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="revisions-versioning">Revisions &amp; versioning</h2>
+<p>Published values can change for different reasons. EARL distinguishes among:</p>
+<div class="nisp-revision-grid">
+  <div class="nisp-revision-row"><strong>Source revision</strong><span>The underlying official source data changed.</span></div>
+  <div class="nisp-revision-row"><strong>Methodology change</strong><span>EARL changed a mapping, construction, or calculation.</span></div>
+  <div class="nisp-revision-row"><strong>EARL correction</strong><span>A previously published EARL output contained an error.</span></div>
+</div>
+<p>Detailed versioning, release-history, and citation guidance will be added as the EARL release archive is finalized.</p>
+</section>
+<section id="technical-resources" class="level2 nisp-method-h2">
+<h2 class="nisp-method-h2 anchored" data-anchor-id="technical-resources">Technical resources</h2>
+<section id="technical-documentation" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="technical-documentation">Technical documentation</h3>
+<div class="nisp-resource-grid nisp-resource-grid-docs">
+  <a class="nisp-resource-card nisp-resource-card-primary" href="resources/methodology/EARL-Methodology.pdf">
+    <span class="nisp-resource-type">Methodology Paper · Version 1.0 · October 2026</span>
+    <strong>EARL Methodology</strong>
+    <span>Complete documentation of EARL data sources, harmonization, statement construction, historical reconciliation, provenance, and validation.</span>
+  </a>
+  <a class="nisp-resource-card" href="resources/technical-note-01/EARL-Historical-Industry-Reconciliation.pdf">
+    <span class="nisp-resource-type">Technical Note 01 · October 2026</span>
+    <strong>Historical Reconciliation &amp; Crosswalk</strong>
+    <span>Methodology, taxonomy crosswalk, precedence rules, index re-anchoring, provenance, validation, and historical availability.</span>
+  </a>
+  <a class="nisp-resource-card" href="#validation-quality-assurance">
+    <span class="nisp-resource-type">On this page</span>
+    <strong>Validation &amp; Quality Assurance</strong>
+    <span>Overview of the checks supporting EARL data and public outputs.</span>
+  </a>
+  <a class="nisp-resource-card" href="https://www.bea.gov/resources/methodologies" target="_blank" rel="noopener">
+    <span class="nisp-resource-type">External documentation</span>
+    <strong>BEA Documentation</strong>
+    <span>Official definitions and methodology underlying the source concepts used by EARL.</span>
+  </a>
+</div>
+</section>
+<section id="related-earl-resources" class="level3 nisp-method-h3">
+<h3 class="nisp-method-h3 anchored" data-anchor-id="related-earl-resources">Related EARL resources</h3>
+<div class="nisp-resource-grid nisp-resource-grid-related">
+  <a class="nisp-resource-card" href="data.html">
+    <span class="nisp-resource-type">EARL resource</span>
+    <strong>Data &amp; Metadata</strong>
+    <span>Definitions, formulas, source references, availability, and download information.</span>
+  </a>
+  <a class="nisp-resource-card" href="income-statements.html">
+    <span class="nisp-resource-type">EARL resource</span>
+    <strong>Income Statements</strong>
+    <span>Explore the National, Corporate, and Industry statement presentations.</span>
+  </a>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/economic-accounts-research-lab\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

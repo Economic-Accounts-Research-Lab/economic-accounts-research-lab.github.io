@@ -1,0 +1,226 @@
+/* ---------- Income Statements: sidebar layout ---------- */
+/* The filter hierarchy on the left, the statement window on the right. */
+.nisp-is-layout {
+  display: grid;
+  grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  /* Pull the panel toward the page edge, and let the statement follow */
+  margin-left: -3.25rem;
+  margin-right: -3rem;
+}
+
+.nisp-is-side .nisp-panel,
+.nisp-is-main .nisp-panel { margin-bottom: 1rem; }
+
+
+/* The statement grows to fit its rows: scroll the page, not the panel */
+.nisp-is-main .nisp-statement-card {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-width: 900px) {
+  .nisp-is-layout {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Wide statements still scroll sideways within the table */
+.nisp-is-main .nisp-statement-card .nisp-table-wrap { overflow-x: auto; }
+
+/* Source metadata and downloads occupy two natural rows. Never ellipsize
+   the source, dataset, or unit labels: wrapping is preferable to hiding them. */
+.nisp-is-main .nisp-meta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+  width: 100%;
+  align-items: start;
+}
+.nisp-meta-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.3rem;
+  min-width: 0;
+}
+.nisp-meta-facts > span { white-space: normal; overflow: visible; }
+.nisp-meta-download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  min-width: 0;
+}
+.nisp-is-main .nisp-meta-row .nisp-download-group {
+  flex: none;
+  margin-left: 0;
+  overflow: visible;
+}
+.nisp-is-main .nisp-meta-row .nisp-export-unit-note {
+  flex: 1 1 22rem;
+  min-width: 0;
+  font-size: 0.75rem;
+  color: var(--nisp-muted);
+  line-height: 1.45;
+}
+
+.nisp-download {
+  margin-left: auto;
+  border: 1px solid var(--nisp-border);
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .nisp-is-main .nisp-meta-row { flex-wrap: wrap; }
+  .nisp-is-main .nisp-meta-row > span { white-space: normal; overflow: visible; }
+}
+
+/* ---------- Statement rows driven by statement-layout.csv ---------- */
+table.nisp-is tr.row-section td {
+  padding-top: 1.6rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--nisp-muted);
+  border-bottom: 1px solid var(--nisp-border);
+}
+
+table.nisp-is td.indent-1 { padding-left: 2.25rem; }
+table.nisp-is td.indent-2 { padding-left: 3.25rem; }
+
+table.nisp-is tr.row-detail td { font-size: 0.85rem; color: var(--nisp-muted); }
+table.nisp-is tr.row-line td { font-weight: 400; }
+table.nisp-is tr.row-subtotal td { font-weight: 600; border-top: 1px solid var(--nisp-border); }
+table.nisp-is tr.row-total td { font-weight: 700; border-top: 2px double var(--nisp-ink); }
+table.nisp-is tr.row-ratio td { font-style: italic; color: var(--nisp-muted); }
+table.nisp-is tr.row-reconciliation td { font-size: 0.85rem; }
+
+
+/* Room to breathe: taller rows and a deeper panel so sections such as
+   margins and the supplemental rows are not cramped together */
+.nisp-is-main .nisp-statement-card { padding-bottom: 2rem; }
+
+.nisp-is-main table.nisp-is th,
+.nisp-is-main table.nisp-is td { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+.nisp-is-main table.nisp-is tr.row-ratio td { padding-top: 0.45rem; padding-bottom: 0.45rem; }
+.nisp-is-main table.nisp-is tr.row-subtotal td,
+.nisp-is-main table.nisp-is tr.row-total td { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+
+/* Source citation under the statement */
+.nisp-source-tables {
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.nisp-source-tables li { margin-bottom: 0.15rem; }
+
+
+/* Quarto's .btn classes would otherwise fill this dark (see controls.css) */
+.nisp-download.btn:disabled {
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+  border: 1px solid var(--nisp-border);
+  opacity: 1;
+}
+
+/* The download button is live now, so it reads as a button rather than a stub */
+.nisp-download,
+.nisp-download.btn {
+  background: #fff;
+  color: var(--nisp-ink);
+  border: 1px solid var(--nisp-ink);
+  cursor: pointer;
+}
+
+.nisp-download:hover,
+.nisp-download.btn:hover { background: var(--nisp-accent-bg); }
+
+.nisp-download:disabled,
+.nisp-download.btn:disabled {
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+  border-color: var(--nisp-border);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* The two download buttons stay together on narrow screens. */
+.nisp-download-group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.nisp-download-group .nisp-download { margin-left: 0; }
+
+/* Inline unit note for the rows that are not in $ millions */
+.nisp-unit-hint {
+  color: var(--nisp-muted);
+  white-space: nowrap;
+}
+
+/* Provenance belongs in the statement's right-hand content column. */
+.nisp-is-main .nisp-footnote { width: 100%; margin: 0; min-width: 0; }
+.nisp-is-main .nisp-footnote .nisp-provenance {
+  width: 100%; max-width: none; margin: 0 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--nisp-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--nisp-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+.nisp-provenance-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  color: var(--nisp-ink);
+}
+.nisp-vintage-date { font-size: 0.78rem; color: var(--nisp-muted); }
+.nisp-provenance p { margin: 0.55rem 0 0; }
+.nisp-source-details {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--nisp-border);
+}
+.nisp-source-details > summary {
+  cursor: pointer;
+  color: var(--nisp-ink);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.nisp-source-details > summary:focus-visible,
+.nisp-source-link:focus-visible {
+  outline: 2px solid var(--nisp-ink);
+  outline-offset: 3px;
+}
+.nisp-source-details[open] > summary { margin-bottom: 0.55rem; }
+.nisp-source-details-body { padding: 0 0.15rem 0.3rem; }
+.nisp-source-details-body code { overflow-wrap: anywhere; font-size: 0.85em; }
+.nisp-source-details .nisp-source-link {
+  color: #2364a1;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 1px;
+}
+.nisp-source-details .nisp-source-link:hover { color: #173f68; }
+@media (max-width: 600px) {
+  .nisp-meta-download-row { align-items: flex-start; }
+  .nisp-is-main .nisp-meta-row .nisp-export-unit-note { flex-basis: 100%; }
+}

@@ -1,0 +1,279 @@
+/* Shared controls: frequency slider, timeline slider and the hierarchy tree.
+   Used by the Income Statements and Charts pages. */
+
+/* ---------- Frequency slider ---------- */
+.nisp-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.nisp-slider-label {
+  font-size: 0.85rem;
+  color: var(--nisp-muted);
+  cursor: pointer;
+}
+
+.nisp-slider-label.active { color: var(--nisp-ink); font-weight: 700; }
+
+.nisp-slider-track {
+  position: relative;
+  width: 2.8rem;
+  height: 1.4rem;
+  flex: none;
+  border: 1px solid var(--nisp-border);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nisp-slider-track.on { background: var(--nisp-accent-bg); border-color: var(--nisp-ink); }
+
+.nisp-slider-knob {
+  position: absolute;
+  top: 50%;
+  left: 0.15rem;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--nisp-ink);
+  transition: left 0.15s ease;
+}
+
+.nisp-slider-track.on .nisp-slider-knob { left: calc(100% - 1.15rem); }
+.nisp-slider-track:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+/* ---------- Filter tree: National > (Corporate, Industry) > industries ---------- */
+.nisp-tree { display: block; }
+
+/* Each level is indented under its parent and hangs off a single spine */
+.nisp-tree-children {
+  margin-left: 0.85rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--nisp-border);
+}
+
+.nisp-tree-branch { position: relative; margin-top: 0.55rem; }
+
+/* The elbow joining a row to the spine on its left */
+.nisp-tree-branch::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 1.1rem;
+  width: 1.1rem;
+  height: 0;
+  border-top: 1px solid var(--nisp-border);
+}
+
+.nisp-tree-children.leaves .nisp-tree-branch::before { top: 0.85rem; }
+
+.nisp-node {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--nisp-border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--nisp-ink);
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.nisp-node-name { display: block; font-weight: 700; font-size: 0.95rem; }
+
+.nisp-node-blurb {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--nisp-muted);
+  margin-top: 0.1rem;
+}
+
+.nisp-node.level-1 .nisp-node-name { font-size: 1.05rem; }
+.nisp-node:hover { border-color: var(--nisp-ink); }
+
+.nisp-node.selected {
+  border: 1.5px solid var(--nisp-ink);
+  background: var(--nisp-accent-bg);
+  box-shadow: inset 3px 0 0 var(--nisp-ink);
+}
+
+/* Individual industries, one per row */
+.nisp-leaf {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px dashed var(--nisp-border);
+  background: transparent;
+  color: var(--nisp-ink);
+  border-radius: 4px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.nisp-leaf:hover:not(:disabled) { border-style: solid; border-color: var(--nisp-ink); }
+
+.nisp-leaf.selected {
+  border: 1.5px solid var(--nisp-ink);
+  border-style: solid;
+  background: var(--nisp-accent-bg);
+  font-weight: 700;
+}
+
+/* Greyed out until Industry is the chosen level */
+.nisp-tree-children.leaves.is-disabled { opacity: 0.45; }
+.nisp-leaf:disabled { cursor: not-allowed; color: var(--nisp-muted); }
+
+.nisp-node:focus-visible,
+.nisp-leaf:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+/* ---------- Timeline slider: Recent / 5 year / 10 year / All ---------- */
+.nisp-range { margin: 0.25rem 0 1.25rem; }
+
+.nisp-range-input {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--nisp-ink);
+  cursor: pointer;
+}
+
+.nisp-range-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+}
+
+.nisp-range-tick {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 0.75rem;
+  color: var(--nisp-muted);
+  cursor: pointer;
+}
+
+/* The selected step is bold text only, with no highlight behind it */
+.nisp-range-tick.is-on {
+  background: transparent;
+  color: var(--nisp-ink);
+  font-weight: 700;
+}
+.nisp-range-tick:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+
+/* ---------- The filter box, shared by Income Statements and Charts ---------- */
+/* ---------- Filter levels: National / Corporate / Industry ---------- */
+/* One row of siblings, one selected at a time */
+.nisp-level-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.nisp-level-btn {
+  border: 1px solid var(--nisp-border);
+  background: #fff;
+  color: var(--nisp-ink);
+  border-radius: 4px;
+  padding: 0.45rem 0.2rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.nisp-level-btn:hover { border-color: var(--nisp-ink); }
+
+.nisp-level-btn.selected {
+  border: 1.5px solid var(--nisp-ink);
+  background: var(--nisp-accent-bg);
+  font-weight: 700;
+}
+
+.nisp-level-btn:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+/* The industries below, two to a row, greyed until Industry is chosen */
+.nisp-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.35rem;
+}
+
+.nisp-industry-grid.is-disabled { opacity: 0.45; }
+
+
+/* Narrower panel: smaller controls so the labels still fit */
+.nisp-panel-title { font-size: 1.15rem; }
+.nisp-level-btn { padding: 0.4rem 0.15rem; font-size: 0.75rem; }
+.nisp-industry-grid { gap: 0.3rem; }
+.nisp-industry-grid .nisp-leaf { font-size: 0.72rem; padding: 0.25rem 0.4rem; }
+.nisp-range-tick { font-size: 0.68rem; }
+.nisp-slider-label { font-size: 0.78rem; }
+
+.nisp-filters { padding: 1rem 0.9rem 1.2rem; }
+
+.nisp-filters .cell { margin: 0; }
+
+/* Industry names are long, so the picker wraps rather than truncating */
+.nisp-industry-grid .nisp-leaf {
+  white-space: normal;
+  line-height: 1.25;
+  font-size: 0.78rem;
+}
+
+/* ---------- Quarto adds .btn .btn-quarto to every <button> ----------
+   Bootstrap's button rules are more specific than ours, and its
+   disabled fill (#343a40) turned the greyed-out industries dark.
+   These selectors match that specificity and restore our own look. */
+.nisp-level-btn.btn {
+  background: #fff;
+  color: var(--nisp-ink);
+  border: 1px solid var(--nisp-border);
+}
+
+.nisp-level-btn.btn.selected {
+  background: var(--nisp-accent-bg);
+  border: 1.5px solid var(--nisp-ink);
+  font-weight: 700;
+}
+
+.nisp-leaf.btn {
+  background: transparent;
+  color: var(--nisp-ink);
+  border: 1px dashed var(--nisp-border);
+}
+
+.nisp-leaf.btn:disabled {
+  background: transparent;
+  color: var(--nisp-muted);
+  border: 1px dashed var(--nisp-border);
+  opacity: 1;
+}
+
+.nisp-leaf.btn.selected {
+  background: var(--nisp-accent-bg);
+  border: 1.5px solid var(--nisp-ink);
+  font-weight: 700;
+}
+
+.nisp-range-tick.btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--nisp-muted);
+}
+
+.nisp-range-tick.btn.is-on { background: none; color: var(--nisp-ink); font-weight: 700; }
+
+.nisp-slider-track.btn {
+  background: #fff;
+  border: 1px solid var(--nisp-border);
+  padding: 0;
+}
+
+.nisp-slider-track.btn.on { background: var(--nisp-accent-bg); border-color: var(--nisp-ink); }

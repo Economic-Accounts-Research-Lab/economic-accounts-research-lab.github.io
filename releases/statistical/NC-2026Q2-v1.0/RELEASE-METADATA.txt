@@ -1,0 +1,17 @@
+release_id=NC-2026Q2-v1.0
+release_version=1.0
+reference_period=2026Q2
+publication_timestamp=2026-11-01T12:08:14-05:00
+publication_timezone=America/New_York
+release_status=Published
+package_mode=Publication
+source_vintage_ids=BEA-VIN-2026-09-30
+stage4_build_ids=BUILD-20261019T210359Z-ff20569
+stage4_git_commits=ff2056952ff08f84a036421c41ca3af0035b0403
+stage4_retrieved_from_utc=2026-10-07T20:12:08Z
+stage4_retrieved_to_utc=2026-10-07T20:12:24Z
+release_source_commit=07a47ffe3a45f9402b54ab6dedc5b749ccb9d33a
+quarto_version=1.9.38
+browser_path=C:\Program Files\Google\Chrome\Application\chrome.exe
+browser_version=156.0.8078.47
+package_generated_at_utc=2026-11-01T17:54:53Z

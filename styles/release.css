@@ -1,0 +1,563 @@
+/* NISP Statistical Release prototypes
+   Namespaced so prototype styling does not alter the persistent Income Statements page. */
+
+.nisp-release {
+  --release-max: 1180px;
+  color: var(--nisp-ink, #1f3347);
+  max-width: var(--release-max);
+  margin: 0 auto;
+}
+
+.nisp-release a { color: var(--nisp-ink, #1f3347); }
+
+.nisp-release-hero {
+  padding: 1.5rem 0 0.5rem;
+  border-bottom: 1px solid var(--nisp-border, #d9dee5);
+  margin-bottom: 1.25rem;
+}
+
+.nisp-release-kicker {
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  margin-bottom: 0.65rem;
+}
+
+.nisp-release-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin: 0;
+  max-width: 900px;
+}
+
+.nisp-release-period {
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.nisp-release-deck {
+  max-width: 760px;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 1.08rem;
+  line-height: 1.55;
+  margin: 1.1rem 0;
+}
+
+.nisp-release-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin: 1rem 0 1.4rem;
+}
+
+.nisp-release-meta > div {
+  padding: 0.7rem 0.85rem;
+  border-right: 1px solid var(--nisp-border, #d9dee5);
+}
+.nisp-release-meta > div:last-child { border-right: 0; }
+.nisp-release-meta-label {
+  display: block;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.12rem;
+}
+.nisp-release-meta-value { font-size: 0.9rem; font-weight: 600; }
+
+.nisp-prototype-note {
+  border-left: 3px solid var(--nisp-ink, #1f3347);
+  background: var(--nisp-panel, #f2f4f7);
+  color: var(--nisp-muted, #6b7785);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.86rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.nisp-release-section {
+  margin: 2.3rem 0 2.8rem;
+  break-inside: avoid-page;
+}
+
+.nisp-release-section-label {
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.25rem;
+}
+
+.nisp-release h2,
+.nisp-release h3 {
+  color: var(--nisp-ink, #1f3347);
+  letter-spacing: -0.015em;
+}
+.nisp-release h2 { margin-top: 0; font-size: 1.7rem; }
+.nisp-release h3 { font-size: 1.15rem; margin: 1.7rem 0 0.65rem; }
+
+.nisp-release-subhead {
+  color: var(--nisp-muted, #6b7785);
+  max-width: 770px;
+  margin-top: -0.45rem;
+  margin-bottom: 1rem;
+}
+
+.nisp-flow-panel {
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 8px;
+  background: #fff;
+  padding: 1rem 1.2rem 0.75rem;
+}
+
+.nisp-flow-equation {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  margin-top: 0.2rem;
+}
+
+.nisp-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.25rem 0 1.8rem;
+}
+
+.nisp-fact {
+  border-top: 3px solid var(--nisp-ink, #1f3347);
+  background: var(--nisp-panel, #f2f4f7);
+  padding: 0.85rem 0.95rem 0.95rem;
+  min-height: 8.2rem;
+}
+
+.nisp-fact-number {
+  display: block;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.nisp-fact p { margin: 0; line-height: 1.45; font-size: 0.95rem; }
+
+.nisp-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nisp-release-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--nisp-ink, #1f3347);
+  margin: 0.4rem 0 1rem;
+  font-size: 0.91rem;
+}
+
+.nisp-release-table th,
+.nisp-release-table td {
+  border: 0;
+  padding: 0.45rem 0.65rem;
+  vertical-align: middle;
+}
+
+.nisp-release-table thead th {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+  color: var(--nisp-muted, #6b7785);
+  border-bottom: 1.5px solid var(--nisp-ink, #1f3347);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nisp-release-table th:first-child,
+.nisp-release-table td:first-child { text-align: left; }
+.nisp-release-table th:not(:first-child),
+.nisp-release-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.nisp-release-table tbody tr:not(.section) td { border-bottom: 1px solid #edf0f3; }
+.nisp-release-table tbody tr.subtotal td { border-top: 1px solid var(--nisp-border, #d9dee5); font-weight: 700; }
+.nisp-release-table tbody tr.total td { border-top: 1.5px solid var(--nisp-ink, #1f3347); font-weight: 800; }
+.nisp-release-table tbody tr.cost td:first-child { font-weight: 500; }
+.nisp-release-table .na { color: var(--nisp-muted, #6b7785); font-style: italic; }
+
+.nisp-statement-table tbody tr.section td {
+  padding-top: 0.95rem;
+  padding-bottom: 0.3rem;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 0;
+}
+.nisp-statement-table tbody tr.indent-1 td:first-child { padding-left: 1.35rem; }
+.nisp-statement-table tbody tr.indent-2 td:first-child { padding-left: 2.25rem; color: var(--nisp-muted, #6b7785); }
+
+.nisp-compact-table { max-width: 900px; }
+.nisp-flow-alt { margin-top: 0.75rem; font-size: 0.82rem; }
+
+.nisp-corporate-callout {
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-left: 4px solid var(--nisp-ink, #1f3347);
+  background: #fff;
+  padding: 0.85rem 1rem;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 1rem;
+}
+
+.nisp-annual-context {
+  background: var(--nisp-panel, #f2f4f7);
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 6px;
+  padding: 0.85rem 1rem 0.35rem;
+}
+
+.nisp-method-note {
+  color: var(--nisp-muted, #6b7785);
+  border-top: 1px solid var(--nisp-border, #d9dee5);
+  padding-top: 1rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-top: 2.5rem;
+}
+
+.nisp-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+/* Prototype A: conventional statistical-release treatment. */
+.nisp-release-title-minimal {
+  font-size: clamp(2rem, 3.5vw, 3.15rem);
+  line-height: 1.08;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  margin: 0;
+  max-width: 920px;
+}
+
+.nisp-release-chart-panel {
+  border-top: 1px solid var(--nisp-border, #d9dee5);
+  border-bottom: 1px solid var(--nisp-border, #d9dee5);
+  padding: 0.85rem 0 0.5rem;
+}
+
+.nisp-combined-statement-table {
+  min-width: 820px;
+}
+
+.nisp-combined-statement-table td:first-child {
+  min-width: 270px;
+}
+
+@media (max-width: 800px) {
+  .nisp-release-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nisp-release-meta > div { border-bottom: 1px solid var(--nisp-border, #d9dee5); }
+  .nisp-release-meta > div:nth-child(2n) { border-right: 0; }
+  .nisp-release-meta > div:nth-last-child(-n+2) { border-bottom: 0; }
+  .nisp-facts { grid-template-columns: 1fr; }
+  .nisp-fact { min-height: 0; }
+  .nisp-release-title { font-size: 2.4rem; }
+}
+
+@media (max-width: 520px) {
+  .nisp-release-meta { grid-template-columns: 1fr; }
+  .nisp-release-meta > div { border-right: 0; border-bottom: 1px solid var(--nisp-border, #d9dee5) !important; }
+  .nisp-release-meta > div:last-child { border-bottom: 0 !important; }
+  .nisp-release-table { font-size: 0.82rem; }
+  .nisp-release-table th, .nisp-release-table td { padding: 0.4rem 0.5rem; }
+  .nisp-statement-table tbody tr.indent-1 td:first-child { padding-left: 1rem; }
+  .nisp-statement-table tbody tr.indent-2 td:first-child { padding-left: 1.45rem; }
+}
+
+@media print {
+  .navbar, #quarto-margin-sidebar, #quarto-sidebar { display: none !important; }
+  .page-columns { display: block !important; }
+  main.content { max-width: none !important; margin: 0 !important; }
+  .nisp-release { max-width: none; }
+  .nisp-release-section { break-inside: auto; }
+  .nisp-flow-panel, .nisp-fact, .nisp-annual-context { break-inside: avoid; }
+  .nisp-release-table { font-size: 8.5pt; }
+  a { text-decoration: none !important; color: inherit !important; }
+}
+
+/* Prototype C: statement-first financial release. */
+.nisp-statement-first-intro {
+  padding-top: 0.35rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--nisp-border, #d9dee5);
+}
+
+.nisp-bridge-panel,
+.nisp-corporate-visual-panel {
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.9rem 1rem 0.6rem;
+}
+
+.nisp-accounting-equation {
+  text-align: center;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.88rem;
+  font-weight: 650;
+  margin-top: 0.25rem;
+}
+
+/* Production-candidate extensions. These rules are intentionally scoped so
+   the frozen A/B/C prototypes retain their reviewed presentation. */
+.nisp-release-candidate .nisp-release-table thead th {
+  font-size: 0.76rem;
+  letter-spacing: 0.035em;
+}
+
+.nisp-development-warning {
+  border-left: 4px solid #9a6b16;
+  background: #fff8e8;
+  color: #5d4a22;
+  padding: 0.72rem 0.9rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.nisp-release-source-meta {
+  border-top: 1px solid var(--nisp-border, #d9dee5);
+  border-bottom: 1px solid var(--nisp-border, #d9dee5);
+  padding: 0.8rem 0;
+  margin: 1.1rem 0 0;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.nisp-release-source-meta strong { color: var(--nisp-ink, #1f3347); }
+
+.nisp-sankey-note {
+  color: var(--nisp-muted, #6b7785);
+  max-width: 820px;
+  margin: 0.55rem 0 0;
+  font-size: 0.83rem;
+}
+
+.nisp-corporate-definition-note {
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  margin: 0.55rem 0 1rem;
+}
+
+.nisp-release-candidate .nisp-flow-panel {
+  padding-bottom: 0.35rem;
+}
+
+/* Final release-candidate text rhythm. Keep these scoped so the frozen A/B/C
+   prototypes retain their reviewed line lengths. */
+.nisp-release-candidate .nisp-release-deck,
+.nisp-release-candidate .nisp-release-subhead {
+  max-width: none;
+  width: 100%;
+}
+
+.nisp-release-candidate .nisp-annual-context + .nisp-release-subhead {
+  margin-top: 1.05rem;
+}
+
+@media print {
+  .nisp-development-warning {
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .nisp-release-source-meta { break-inside: avoid; }
+}
+
+/* Statistical Release archive/PDF pagination.
+   Keep compact visual sections together without preventing long statements
+   from splitting naturally across pages. */
+@media print {
+  .nisp-national-growth-section,
+  .nisp-annual-context-section {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .nisp-national-growth-section > .nisp-release-section-label,
+  .nisp-national-growth-section > h2,
+  .nisp-annual-context-section > .nisp-release-section-label,
+  .nisp-annual-context-section > h2 {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .nisp-national-growth-section .quarto-figure,
+  .nisp-annual-context-section .nisp-annual-context {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
+
+
+/* Archive/PDF institutional masthead */
+
+.nisp-release-archive-masthead {
+  margin: 0 0 1.35rem;
+  padding: 0.2rem 0 0;
+}
+
+.nisp-release-archive-brand {
+  width: min(360px, 58%);
+  max-width: 100%;
+}
+
+.nisp-release-archive-brand svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nisp-release-archive-rule {
+  margin-top: 1.2rem;
+  border-top: 3px solid #739DB6;
+}
+
+@media print {
+  .nisp-release-archive-masthead {
+    margin-bottom: 0.9rem;
+    padding-top: 0;
+  }
+
+  .nisp-release-archive-brand {
+    width: 310px;
+  }
+
+  .nisp-release-archive-rule {
+    margin-top: 0.85rem;
+    border-top-width: 2px;
+  }
+}
+
+
+/* EARL NC-2026Q2 release: publication-facing print continuity and small-screen
+   inspection affordances. The canonical statements and figure data are unchanged. */
+.nisp-mobile-flow-hint { display: none; }
+
+@media screen and (max-width: 680px) {
+  .nisp-release-candidate .nisp-mobile-flow-hint {
+    display: block;
+    color: var(--nisp-muted, #6b7785);
+    font-size: 0.76rem;
+    margin-bottom: 0.5rem;
+  }
+  .nisp-release-candidate .nisp-flow-panel {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nisp-release-candidate .nisp-flow-panel .cell-output-display img {
+    width: 780px !important;
+    max-width: none !important;
+  }
+  .nisp-release-candidate .nisp-table-wrap::before {
+    content: "Swipe horizontally to see all columns";
+    display: block;
+    color: var(--nisp-muted, #6b7785);
+    font-size: 0.74rem;
+    padding: 0.2rem 0;
+  }
+}
+
+@media print {
+  /* Chromium 131+ supports @page margin boxes for unobtrusive publication
+     identifiers. The pagination audit still checks the resulting PDF. */
+  @page {
+    size: letter;
+    margin: 0.50in 0.42in 0.60in;
+    @bottom-left {
+      content: "EARL  ·  NC-2026Q2-v1.0";
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      color: #657482;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: Arial, sans-serif;
+      font-size: 8pt;
+      color: #657482;
+    }
+  }
+  /* Keep the relatively large income-flow figure and its introduction together.
+     Do not force National/Corporate onto fresh pages: those hard breaks stranded
+     an entire short page of headline-table notes and a final provenance page. */
+  .nisp-release-candidate .nisp-income-flow-section {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+  .nisp-release-candidate .nisp-national-income-section,
+  .nisp-release-candidate .nisp-corporate-income-section {
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+  /* Compact print-only section rhythm, preserving on-screen presentation. */
+  .nisp-release-candidate .nisp-release-section {
+    margin-top: 1.25rem;
+    margin-bottom: 1.15rem;
+  }
+  .nisp-release-candidate .nisp-income-flow-section {
+    margin-bottom: 1rem;
+  }
+  .nisp-release-candidate .nisp-facts {
+    margin: 0.6rem 0;
+  }
+  .nisp-release-candidate .nisp-fact {
+    padding: 0.55rem 0.7rem;
+  }
+  .nisp-release-candidate .nisp-release-section > .nisp-release-section-label,
+  .nisp-release-candidate .nisp-release-section > h2,
+  .nisp-release-candidate .nisp-release-section > h3,
+  .nisp-release-candidate .nisp-income-flow-section > .nisp-release-subhead {
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+  }
+  .nisp-release-candidate .nisp-mobile-flow-hint,
+  .nisp-release-candidate .nisp-table-wrap::before { display: none !important; }
+  .nisp-release-candidate .nisp-flow-panel,
+  .nisp-release-candidate .nisp-corporate-ratios,
+  .nisp-release-candidate .nisp-corporate-ratios .nisp-table-wrap {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+  .nisp-release-candidate .nisp-release-table thead {
+    display: table-header-group !important;
+  }
+  .nisp-release-candidate .nisp-release-table tbody tr {
+    break-inside: avoid !important;
+  }
+  .nisp-release-candidate .nisp-table-wrap { overflow: visible !important; }
+  .nisp-release-candidate .nisp-national-ebitda-note {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+}

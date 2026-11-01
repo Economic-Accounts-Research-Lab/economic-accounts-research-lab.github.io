@@ -1,0 +1,133 @@
+statement_family,section_id,section_label,section_level,section_order,row_order,series_id,indent_level,row_type,presentation_sign,display_policy,notes
+NIS-A,income_flow,,0,10,10,gross_output,0,line,as_is,always,
+NIS-A,income_flow,,0,10,20,intermediate_inputs,0,line,invert,always,
+NIS-A,income_flow,,0,10,30,intermediate_inputs_energy,1,detail,invert,always,Annual COGS detail; render N/A when unavailable for the displayed period.
+NIS-A,income_flow,,0,10,40,intermediate_inputs_materials,1,detail,invert,always,Annual COGS detail; render N/A when unavailable for the displayed period.
+NIS-A,income_flow,,0,10,50,intermediate_inputs_services,1,detail,invert,always,Annual COGS detail; render N/A when unavailable for the displayed period.
+NIS-A,income_flow,,0,10,60,gross_value_added,0,subtotal,as_is,always,
+NIS-A,operating_expenses,Operating Expenses,0,20,70,wages_and_salaries,1,detail,invert,always,
+NIS-A,operating_expenses,Operating Expenses,0,20,80,supplements_to_wages_and_salaries,1,detail,invert,always,
+NIS-A,operating_expenses,Operating Expenses,0,20,90,compensation_of_employees,0,subtotal,invert,always,
+NIS-A,operating_expenses,Operating Expenses,0,20,100,taxes_on_production_and_imports,1,detail,invert,always,
+NIS-A,operating_expenses,Operating Expenses,0,20,110,subsidies,1,detail,as_is,always,"Display label should make subtraction explicit (e.g., Less: Subsidies); canonical value remains source sign."
+NIS-A,operating_expenses,Operating Expenses,0,20,120,operating_expenses,0,total,invert,always,
+NIS-A,operating_profit,,0,30,130,ebitda_gos,0,subtotal,as_is,always,Public label must explicitly identify reported-source basis: EBITDA (Reported BEA Gross Operating Surplus).
+NIS-A,operating_profit,,0,30,140,consumption_of_fixed_capital,1,detail,invert,always,
+NIS-A,operating_profit,,0,30,150,net_operating_surplus,0,subtotal,as_is,always,
+NIS-A,operating_profit,,0,30,160,interest_expense,1,detail,invert,always,
+NIS-A,operating_profit,,0,30,170,earnings_before_tax,0,total,as_is,always,
+NIS-A,margins,Margins (%),0,40,180,gross_margin,0,ratio,as_is,always,
+NIS-A,margins,Margins (%),0,40,190,ebitda_margin_gos,0,ratio,as_is,always,"Margin uses canonical reported EBITDA/GOS, not the calculated reconciliation series."
+NIS-A,margins,Margins (%),0,40,200,ebit_margin,0,ratio,as_is,always,
+NIS-A,margins,Margins (%),0,40,210,ebt_margin,0,ratio,as_is,always,
+NIS-A,supplemental_reconciliation,NIPA Reconciliation & Composition (Supplemental),0,50,220,ebitda_calculated,0,reconciliation,as_is,always,Reconciliation-only annual calculated EBITDA. Keep distinct from reported BEA Gross Operating Surplus.
+NIS-A,supplemental_reconciliation,NIPA Reconciliation & Composition (Supplemental),0,50,230,net_operating_surplus_output_perspective,0,reconciliation,as_is,always,Alternative/output-perspective EBIT reconciliation series.
+NIS-A,supplemental_reconciliation,NIPA Reconciliation & Composition (Supplemental),0,50,240,statistical_discrepancy,0,reconciliation,as_is,always,Preserve source sign.
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,250,interest_expense,1,detail,as_is,always,"Repeated intentionally; additive component in NIPA EBIT composition, so display source sign here."
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,260,business_current_transfer_payments_net,1,detail,as_is,always,
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,270,proprietors_income_with_iva_ccadj,1,detail,as_is,always,
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,280,rental_income_with_ccadj,1,detail,as_is,always,
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,290,government_enterprise_surplus,1,detail,as_is,always,Preserve source sign.
+NIS-A,supplemental_ebit_composition,NIPA EBIT Composition,1,60,300,corporate_profits_with_iva_ccadj,1,detail,as_is,always,
+NIS-Q,income_flow,,0,10,10,gross_output,0,line,as_is,always,
+NIS-Q,income_flow,,0,10,20,intermediate_inputs,0,line,invert,always,
+NIS-Q,income_flow,,0,10,30,gross_value_added,0,subtotal,as_is,always,
+NIS-Q,operating_expenses,Operating Expenses,0,20,40,wages_and_salaries,1,detail,invert,always,
+NIS-Q,operating_expenses,Operating Expenses,0,20,50,supplements_to_wages_and_salaries,1,detail,invert,always,
+NIS-Q,operating_expenses,Operating Expenses,0,20,60,compensation_of_employees,0,subtotal,invert,always,
+NIS-Q,operating_expenses,Operating Expenses,0,20,70,taxes_on_production_and_imports,1,detail,invert,always,
+NIS-Q,operating_expenses,Operating Expenses,0,20,80,subsidies,1,detail,as_is,always,"Display label should make subtraction explicit (e.g., Less: Subsidies); canonical value remains source sign."
+NIS-Q,operating_expenses,Operating Expenses,0,20,90,operating_expenses,0,total,invert,always,
+NIS-Q,operating_profit,,0,30,100,ebitda_calculated,0,subtotal,as_is,always,Primary quarterly EBITDA is an explicitly USEAL-calculated measure: Gross Profit minus Total Operating Expenses. Reported BEA Gross Operating Surplus remains a separate annual/source-supported series and is not overwritten.
+NIS-Q,operating_profit,,0,30,110,consumption_of_fixed_capital,1,detail,invert,always,
+NIS-Q,operating_profit,,0,30,120,net_operating_surplus,0,subtotal,as_is,always,
+NIS-Q,operating_profit,,0,30,130,interest_expense,1,detail,invert,always,
+NIS-Q,operating_profit,,0,30,140,earnings_before_tax,0,total,as_is,always,
+NIS-Q,margins,Margins (%),0,40,150,gross_margin,0,ratio,as_is,always,
+NIS-Q,margins,Margins (%),0,40,160,ebitda_margin_calculated,0,ratio,as_is,always,Quarterly EBITDA Margin uses EBITDA (Calculated) / Gross Revenue. Keep distinct from the reported-GOS-based EBITDA Margin used where canonical GOS exists.
+NIS-Q,margins,Margins (%),0,40,170,ebit_margin,0,ratio,as_is,always,
+NIS-Q,margins,Margins (%),0,40,180,ebt_margin,0,ratio,as_is,always,
+NIS-Q,supplemental_reconciliation,NIPA Reconciliation & Composition (Supplemental),0,50,200,statistical_discrepancy,0,reconciliation,as_is,always,Preserve source sign.
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,210,interest_expense,1,detail,as_is,always,"Repeated intentionally; additive component in NIPA EBIT composition, so display source sign here."
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,220,business_current_transfer_payments_net,1,detail,as_is,always,
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,230,proprietors_income_with_iva_ccadj,1,detail,as_is,always,
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,240,rental_income_with_ccadj,1,detail,as_is,always,
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,250,government_enterprise_surplus,1,detail,as_is,always,Preserve source sign.
+NIS-Q,supplemental_ebit_composition,NIPA EBIT Composition,1,60,260,corporate_profits_with_iva_ccadj,1,detail,as_is,always,
+CIS-A,income_flow,,0,10,10,gross_value_added,0,subtotal,as_is,always,
+CIS-A,operating_expenses,Operating Expenses,0,20,20,wages_and_salaries,1,detail,invert,always,
+CIS-A,operating_expenses,Operating Expenses,0,20,30,supplements_to_wages_and_salaries,1,detail,invert,always,
+CIS-A,operating_expenses,Operating Expenses,0,20,40,compensation_of_employees,0,subtotal,invert,always,
+CIS-A,operating_expenses,Operating Expenses,0,20,50,taxes_on_production_and_imports_less_subsidies,1,detail,invert,always,
+CIS-A,operating_expenses,Operating Expenses,0,20,60,operating_expenses,0,total,invert,always,
+CIS-A,operating_profit,,0,30,70,ebitda_calculated,0,subtotal,as_is,always,USEAL-calculated subtotal. Public label must read EBITDA (Calculated); keep distinct from reported BEA GOS-based EBITDA in National/Industry.
+CIS-A,operating_profit,,0,30,80,consumption_of_fixed_capital,1,detail,invert,always,
+CIS-A,operating_profit,,0,30,90,net_operating_surplus,0,subtotal,as_is,always,
+CIS-A,pre_tax_income,,0,40,100,interest_expense,1,detail,invert,always,Public label should allow sign changes: Interest Expense / (Income).
+CIS-A,pre_tax_income,,0,40,110,business_current_transfer_payments_net,1,detail,invert,always,
+CIS-A,pre_tax_income,,0,40,120,ebt_with_iva_ccadj,0,total,as_is,always,
+CIS-A,net_income,,0,50,130,taxes_on_corporate_income,1,detail,invert,always,
+CIS-A,net_income,,0,50,140,net_income_with_iva_ccadj,0,total,as_is,always,
+CIS-A,earnings_distribution,Earnings Distribution,0,60,150,net_dividends,1,detail,invert,always,
+CIS-A,earnings_distribution,Earnings Distribution,0,60,160,retained_earnings_with_iva_ccadj,0,total,as_is,always,
+CIS-A,ratios,Ratios (%),0,70,170,effective_tax_rate,0,ratio,as_is,always,
+CIS-A,ratios,Ratios (%),0,70,180,payout_ratio,0,ratio,as_is,always,
+CIS-A,ratios,Ratios (%),0,70,190,retention_ratio,0,ratio,as_is,always,
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,200,inventory_valuation_adjustment,1,reconciliation,as_is,always,Preserve source sign.
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,210,capital_consumption_adjustment,1,reconciliation,as_is,always,Preserve source sign.
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,220,ebt_without_iva_ccadj,0,total,as_is,always,
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,230,taxes_on_corporate_income,1,detail,invert,always,Repeated intentionally to make the alternative EBT-to-Net-Income reconciliation explicit.
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,240,net_income_without_iva_ccadj,0,total,as_is,always,
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,250,net_dividends,1,detail,invert,always,Repeated intentionally to make the alternative Net-Income-to-Retained-Earnings reconciliation explicit.
+CIS-A,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,260,retained_earnings_without_iva_ccadj,0,total,as_is,always,
+CIS-A,rest_of_world,Rest-of-World Profit Flows (Supplemental),0,90,270,corporate_profits_receipts_from_rest_of_world,1,detail,as_is,always,
+CIS-A,rest_of_world,Rest-of-World Profit Flows (Supplemental),0,90,280,corporate_profits_payments_to_rest_of_world,1,detail,invert,always,"Display label should make subtraction explicit (e.g., Less: Payments to Rest of World)."
+CIS-Q,income_flow,,0,10,10,gross_value_added,0,subtotal,as_is,always,
+CIS-Q,operating_expenses,Operating Expenses,0,20,20,wages_and_salaries,1,detail,invert,always,
+CIS-Q,operating_expenses,Operating Expenses,0,20,30,supplements_to_wages_and_salaries,1,detail,invert,always,
+CIS-Q,operating_expenses,Operating Expenses,0,20,40,compensation_of_employees,0,subtotal,invert,always,
+CIS-Q,operating_expenses,Operating Expenses,0,20,50,taxes_on_production_and_imports_less_subsidies,1,detail,invert,always,
+CIS-Q,operating_expenses,Operating Expenses,0,20,60,operating_expenses,0,total,invert,always,
+CIS-Q,operating_profit,,0,30,70,ebitda_calculated,0,subtotal,as_is,always,USEAL-calculated subtotal. Public label must read EBITDA (Calculated); keep distinct from reported BEA GOS-based EBITDA in National/Industry.
+CIS-Q,operating_profit,,0,30,80,consumption_of_fixed_capital,1,detail,invert,always,
+CIS-Q,operating_profit,,0,30,90,net_operating_surplus,0,subtotal,as_is,always,
+CIS-Q,pre_tax_income,,0,40,100,interest_expense,1,detail,invert,always,Public label should allow sign changes: Interest Expense / (Income).
+CIS-Q,pre_tax_income,,0,40,110,business_current_transfer_payments_net,1,detail,invert,always,
+CIS-Q,pre_tax_income,,0,40,120,ebt_with_iva_ccadj,0,total,as_is,always,
+CIS-Q,net_income,,0,50,130,taxes_on_corporate_income,1,detail,invert,always,
+CIS-Q,net_income,,0,50,140,net_income_with_iva_ccadj,0,total,as_is,always,
+CIS-Q,earnings_distribution,Earnings Distribution,0,60,150,net_dividends,1,detail,invert,always,
+CIS-Q,earnings_distribution,Earnings Distribution,0,60,160,retained_earnings_with_iva_ccadj,0,total,as_is,always,
+CIS-Q,ratios,Ratios (%),0,70,170,effective_tax_rate,0,ratio,as_is,always,
+CIS-Q,ratios,Ratios (%),0,70,180,payout_ratio,0,ratio,as_is,always,
+CIS-Q,ratios,Ratios (%),0,70,190,retention_ratio,0,ratio,as_is,always,
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,200,inventory_valuation_adjustment,1,reconciliation,as_is,always,Preserve source sign.
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,210,capital_consumption_adjustment,1,reconciliation,as_is,always,Preserve source sign.
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,220,ebt_without_iva_ccadj,0,total,as_is,always,
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,230,taxes_on_corporate_income,1,detail,invert,always,Repeated intentionally to make the alternative EBT-to-Net-Income reconciliation explicit.
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,240,net_income_without_iva_ccadj,0,total,as_is,always,
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,250,net_dividends,1,detail,invert,always,Repeated intentionally to make the alternative Net-Income-to-Retained-Earnings reconciliation explicit.
+CIS-Q,alternative_profit,Alternative Profit Measure — Without IVA & CCAdj (Supplemental),0,80,260,retained_earnings_without_iva_ccadj,0,total,as_is,always,
+CIS-Q,rest_of_world,Rest-of-World Profit Flows (Supplemental),0,90,270,corporate_profits_receipts_from_rest_of_world,1,detail,as_is,always,
+CIS-Q,rest_of_world,Rest-of-World Profit Flows (Supplemental),0,90,280,corporate_profits_payments_to_rest_of_world,1,detail,invert,always,"Display label should make subtraction explicit (e.g., Less: Payments to Rest of World)."
+IIS-A,income_flow,,0,10,10,gross_output,0,line,as_is,always,
+IIS-A,income_flow,,0,10,20,intermediate_inputs,0,line,invert,always,
+IIS-A,income_flow,,0,10,30,intermediate_inputs_energy,1,detail,invert,always,Annual COGS detail; may lag headline Industry series.
+IIS-A,income_flow,,0,10,40,intermediate_inputs_materials,1,detail,invert,always,Annual COGS detail; may lag headline Industry series.
+IIS-A,income_flow,,0,10,50,intermediate_inputs_services,1,detail,invert,always,Annual COGS detail; may lag headline Industry series.
+IIS-A,income_flow,,0,10,60,gross_value_added,0,subtotal,as_is,always,
+IIS-A,operating_expenses,Operating Expenses,0,20,70,compensation_of_employees,1,detail,invert,always,
+IIS-A,operating_expenses,Operating Expenses,0,20,80,taxes_on_production_and_imports_less_subsidies,1,detail,invert,always,
+IIS-A,operating_expenses,Operating Expenses,0,20,90,operating_expenses,0,total,invert,always,
+IIS-A,operating_profit,,0,30,100,ebitda_gos,0,total,as_is,always,Public label must explicitly identify reported-source basis: EBITDA (Reported BEA Gross Operating Surplus). Industry statement ends its primary accounting chain here.
+IIS-A,margins,Margins (%),0,40,110,gross_margin,0,ratio,as_is,always,
+IIS-A,margins,Margins (%),0,40,120,ebitda_margin_gos,0,ratio,as_is,always,Uses reported BEA Gross Operating Surplus as canonical EBITDA numerator.
+IIS-A,labor_detail,Labor & Operating Detail (Supplemental),0,50,130,wages_and_salaries,1,detail,as_is,always,
+IIS-A,labor_detail,Labor & Operating Detail (Supplemental),0,50,140,fte_employees,1,detail,as_is,always,
+IIS-A,labor_detail,Labor & Operating Detail (Supplemental),0,50,150,wage_and_salary_accruals_per_fte,1,detail,as_is,always,
+IIS-A,financing_income_detail,Financing & Income Detail (Supplemental),0,60,160,interest_expense,1,detail,invert,when_available,Sparse Industry coverage; public label should allow sign changes: Interest Expense / (Income). Do not imply an EBITDA-to-EBT bridge.
+IIS-A,financing_income_detail,Financing & Income Detail (Supplemental),0,60,170,proprietors_income_with_iva_ccadj,1,detail,as_is,when_available,"Sparse Industry coverage; supplemental information only, not part of the primary EBITDA chain."
+IIS-Q,income_flow,,0,10,10,gross_output,0,line,as_is,always,
+IIS-Q,income_flow,,0,10,20,intermediate_inputs,0,line,invert,always,
+IIS-Q,income_flow,,0,10,30,gross_value_added,0,subtotal,as_is,always,
+IIS-Q,margins,Margins (%),0,20,40,gross_margin,0,ratio,as_is,always,Quarterly Industry statement currently ends at production-side Gross Profit/Gross Margin; do not imply unsupported quarterly OpEx/EBITDA structure.

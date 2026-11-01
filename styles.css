@@ -1,0 +1,870 @@
+@import url("styles/useal-brand.css");
+/* ---------- Site-wide: light navbar (matches the design sketches) ---------- */
+:root {
+  --nisp-ink: #1f3347;
+  --nisp-muted: #6b7785;
+  --nisp-panel: #f2f4f7;
+  --nisp-border: #d9dee5;
+  --nisp-accent-bg: #e8f1ec;
+}
+
+/* Site-wide navbar styling lives in styles/useal-brand.css. */
+
+
+/* ---------- Income Statements page ---------- */
+.nisp-panel {
+  background: var(--nisp-panel);
+  border: 1px solid var(--nisp-border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.nisp-panel-title {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--nisp-ink);
+  margin-bottom: 0.5rem;
+}
+
+.nisp-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nisp-filter-row .cell { margin: 0; }
+
+.nisp-pills { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.nisp-pill {
+  border: 1px solid var(--nisp-border);
+  background: #fff;
+  color: var(--nisp-ink);
+  border-radius: 999px;
+  padding: 0.3rem 1.1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nisp-pill.active {
+  border: 1.5px solid var(--nisp-ink);
+  color: var(--nisp-ink);
+  background: var(--nisp-accent-bg);
+  font-weight: 700;
+}
+
+.nisp-pill:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+.nisp-filters form label { color: var(--nisp-muted); }
+
+
+.nisp-meta { background: #fff; }
+
+.nisp-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 4rem;
+  color: var(--nisp-ink);
+}
+
+.nisp-statement-card { background: #fff; }
+
+.nisp-statement-title {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--nisp-ink);
+  border-bottom: 1px solid var(--nisp-border);
+  padding-bottom: 0.25rem;
+}
+
+.nisp-statement-sub {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--nisp-muted);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.nisp-table-wrap { overflow-x: auto; }
+
+table.nisp-is {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--nisp-ink);
+}
+
+table.nisp-is th, table.nisp-is td {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  white-space: nowrap;
+}
+
+table.nisp-is thead th {
+  font-weight: 600;
+  border-bottom: 1px solid var(--nisp-border);
+}
+
+table.nisp-is td:first-child { white-space: normal; padding-left: 1.25rem; }
+table.nisp-is .num { text-align: right; font-variant-numeric: tabular-nums; }
+table.nisp-is .na { color: var(--nisp-muted); }
+table.nisp-is .subtotal td { font-weight: 600; border-top: 1px solid var(--nisp-border); }
+table.nisp-is .margin-row td { font-style: italic; color: var(--nisp-muted); }
+table.nisp-is .total td { font-weight: 700; border-top: 2px double var(--nisp-ink); }
+
+.nisp-footnote {
+  color: var(--nisp-muted);
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+}
+
+/* ---------- Income Statements: industry filter dropdown ---------- */
+.nisp-pill:hover { background: #fff; color: var(--nisp-ink); border-color: var(--nisp-ink); }
+.nisp-pill.active:hover { background: var(--nisp-accent-bg); }
+
+.nisp-dd-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+.nisp-dd-label { color: var(--nisp-muted); }
+
+/* Let the open menu spill out of Quarto's scrolling cell-output box */
+.nisp-filters .cell-output-display:has(.nisp-dd) { overflow: visible; }
+
+.nisp-dd { position: relative; margin: 0; }
+
+.nisp-dd-toggle {
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-width: 15rem;
+  border: 1px solid var(--nisp-border);
+  background: #fff;
+  color: var(--nisp-ink);
+  border-radius: 999px;
+  padding: 0.3rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nisp-dd-toggle::-webkit-details-marker { display: none; }
+.nisp-dd-toggle:hover, .nisp-dd[open] .nisp-dd-toggle { border-color: var(--nisp-ink); }
+
+.nisp-dd-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  min-width: 100%;
+  max-height: 26rem;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--nisp-border);
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(31, 51, 71, 0.15);
+  padding: 0.4rem 0;
+}
+
+.nisp-dd-tools {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0.9rem 0.45rem;
+  border-bottom: 1px solid var(--nisp-border);
+  margin-bottom: 0.25rem;
+}
+
+.nisp-dd-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.3rem 0.9rem;
+  color: var(--nisp-ink);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nisp-dd-item:hover { background: var(--nisp-panel); }
+.nisp-dd-item input { accent-color: var(--nisp-ink); }
+
+.nisp-link {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--nisp-ink);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nisp-dd-wrap.is-disabled { opacity: 0.5; }
+.nisp-dd-wrap.is-disabled .nisp-dd-toggle { cursor: not-allowed; background: var(--nisp-panel); border-color: var(--nisp-border); }
+
+.nisp-dd-toggle:focus-visible, .nisp-link:focus-visible {
+  outline: 2px solid var(--nisp-ink);
+  outline-offset: 2px;
+}
+
+/* ---------- Income Statements: catalogue ---------- */
+.nisp-catalogue-panel { background: #fff; }
+
+.nisp-cat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.nisp-cat-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--nisp-ink);
+}
+
+.nisp-cat-count { color: var(--nisp-muted); font-size: 0.85rem; }
+
+table.nisp-cat-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--nisp-ink);
+}
+
+table.nisp-cat-table th, table.nisp-cat-table td {
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-bottom: 1px solid var(--nisp-border);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.nisp-cat-table thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nisp-muted);
+  border-bottom: 1.5px solid var(--nisp-ink);
+}
+
+table.nisp-cat-table td:first-child { white-space: normal; }
+table.nisp-cat-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+table.nisp-cat-table tbody tr { cursor: pointer; transition: background 0.12s; }
+table.nisp-cat-table tbody tr:hover { background: var(--nisp-panel); }
+table.nisp-cat-table tbody tr.selected { background: var(--nisp-accent-bg); box-shadow: inset 3px 0 0 var(--nisp-ink); }
+table.nisp-cat-table tbody tr:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: -2px; }
+
+.nisp-cat-name { display: block; font-weight: 700; }
+.nisp-cat-blurb { display: block; font-size: 0.78rem; color: var(--nisp-muted); }
+
+.nisp-cat-action { text-align: right; }
+
+.nisp-cat-badge, .nisp-cat-view {
+  display: inline-block;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.05rem 0.65rem;
+}
+
+.nisp-cat-badge { font-weight: 700; background: var(--nisp-ink); color: #fff; }
+.nisp-cat-view { border: 1px solid var(--nisp-border); background: #fff; }
+tr:hover .nisp-cat-view { border-color: var(--nisp-ink); }
+
+.nisp-cat-empty { color: var(--nisp-muted); margin: 0.5rem 0; }
+
+#nisp-selected { scroll-margin-top: 80px; }
+
+/* ---------- Method page ---------- */
+.nisp-method-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2.35fr) minmax(15rem, 1fr);
+  gap: 1.4rem;
+  align-items: start;
+  margin: 1.1rem 0 2.2rem;
+}
+
+.nisp-map {
+  --map-line: #9aa4ae;
+  color: var(--nisp-ink);
+  min-width: 0;
+}
+
+#translation-map > h2 {
+  background: #ebebeb;
+  border: 1px solid #dcdcdc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0 0.65rem;
+}
+
+#translation-map > p:first-of-type {
+  margin-top: 0;
+  color: var(--nisp-muted);
+}
+
+.nisp-map-head,
+.nisp-map-row,
+.nisp-map-section-label {
+  display: grid;
+  grid-template-columns: minmax(10.5rem, 1fr) minmax(6.5rem, 0.9fr) minmax(11.5rem, 1fr);
+  align-items: center;
+  column-gap: 0.85rem;
+}
+
+.nisp-map-head {
+  margin: 0 0.65rem 0.9rem;
+}
+
+.nisp-map-col {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.nisp-map-sub {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--nisp-muted);
+}
+
+.nisp-map-row {
+  padding: 0.3rem 0.65rem;
+}
+
+.nisp-map-row.rule { border-top: 1px solid var(--nisp-border); }
+.nisp-map-row.rule-bottom { border-bottom: 1px solid var(--nisp-border); }
+.nisp-map-row.subtotal-row { background: #fafbfc; }
+
+.nisp-map-row .bea,
+.nisp-map-row .nisp {
+  min-width: 0;
+  font-size: 0.88rem;
+}
+
+.nisp-map-row .nisp { font-weight: 700; }
+
+.nisp-map-row.detail .bea,
+.nisp-map-row.detail .nisp {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--nisp-muted);
+  padding-left: 0.45rem;
+}
+
+.nisp-map-section-label {
+  padding: 0.55rem 0.65rem 0.15rem;
+  color: var(--nisp-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.nisp-inline-note {
+  display: block;
+  margin-top: 0.08rem;
+  color: var(--nisp-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.nisp-formula-label {
+  color: var(--nisp-muted);
+  font-size: 0.75rem !important;
+  font-style: italic;
+}
+
+.nisp-concept-trigger {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  line-height: 1.25;
+  text-align: left;
+  padding: 0.06rem 0.12rem;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.nisp-concept-trigger:hover,
+.nisp-concept-trigger:focus-visible,
+.nisp-concept-trigger.is-active {
+  background: var(--nisp-accent-bg);
+  color: var(--nisp-ink);
+}
+
+.nisp-concept-trigger:focus-visible {
+  outline: 2px solid var(--nisp-ink);
+  outline-offset: 2px;
+}
+
+.nisp-map-row .link {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+}
+
+.nisp-map .arrow {
+  flex: 1;
+  height: 0;
+  border-top: 1px solid var(--map-line);
+  position: relative;
+}
+
+.nisp-map .arrow::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4.5px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 8px solid var(--map-line);
+}
+
+.nisp-map .arrow.dotted {
+  border-top-color: transparent;
+  background-image: repeating-linear-gradient(
+    to right, var(--map-line) 0 2px, transparent 2px 6px);
+  background-size: 100% 1px;
+  background-position: 0 -1px;
+  background-repeat: repeat-x;
+}
+
+.nisp-map .arrow.constructed {
+  border-top: 3px double var(--map-line);
+}
+
+.nisp-map .arrow.constructed::after {
+  top: -5.5px;
+}
+
+.nisp-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.6rem;
+  margin: 1.1rem 0.65rem 0;
+  font-size: 0.76rem;
+  color: var(--nisp-muted);
+}
+
+.nisp-map-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nisp-map-legend .legend-glyph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 2.7rem;
+  height: 1rem;
+  flex: none;
+}
+
+.nisp-map-cta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.nisp-map-btn {
+  background: #1f3864;
+  color: #fff !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.58rem 1.35rem;
+  text-decoration: none;
+}
+
+.nisp-map-btn:hover { background: #16294a; }
+
+/* Selected mapping detail panel */
+.nisp-map-detail {
+  position: sticky;
+  top: 5.5rem;
+  background: #f8fafb;
+  border: 1px solid var(--nisp-border);
+  border-radius: 6px;
+  padding: 1rem 1.05rem;
+  color: var(--nisp-ink);
+  font-size: 0.82rem;
+}
+
+.nisp-detail-eyebrow {
+  display: block;
+  color: var(--nisp-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.nisp-map-detail h3 {
+  margin: 0 0 0.8rem;
+  color: var(--nisp-ink);
+  font-size: 1.15rem;
+}
+
+.nisp-map-detail dl { margin: 0; }
+
+.nisp-map-detail dl > div {
+  border-top: 1px solid var(--nisp-border);
+  padding: 0.55rem 0;
+}
+
+.nisp-map-detail dt {
+  color: var(--nisp-muted);
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+}
+
+.nisp-map-detail dd {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.nisp-detail-badge {
+  display: inline-block;
+  border: 1px solid #b9c6d3;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.nisp-detail-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  border-top: 1px solid var(--nisp-border);
+  margin-top: 0.5rem;
+  padding-top: 0.7rem;
+  font-weight: 600;
+}
+
+/* Method page hierarchy.
+   Explicit classes keep the styling local to Method without wrapping the entire
+   document, which allows Quarto's page TOC to render normally. Quarto may place
+   heading attributes on either the heading or a section wrapper, so both forms
+   are supported. */
+h2.nisp-method-h2,
+.nisp-method-h2 > h2 {
+  font-size: 1.72rem;
+  line-height: 1.2;
+  font-weight: 750;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--nisp-border);
+}
+
+h3.nisp-method-h3,
+.nisp-method-h3 > h3 {
+  font-size: 1.22rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 1.85rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Preserve the compact hero-section heading treatment. */
+h2.nisp-method-translation-heading,
+.nisp-method-translation-heading > h2,
+#translation-map > h2 {
+  background: #ebebeb;
+  border: 1px solid #dcdcdc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0 0.65rem;
+}
+
+/* "What NISP is doing" cards */
+.nisp-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.15rem 0 2rem;
+}
+
+.nisp-card {
+  background: #edf3fa;
+  border: 1px solid #c9d9ea;
+  border-top: 3px solid #9eb3c7;
+  border-radius: 4px;
+  padding: 1.05rem 1.1rem 1.15rem;
+  color: var(--nisp-ink);
+}
+
+.nisp-card-title {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.nisp-card-summary {
+  margin: 0;
+  color: var(--nisp-ink);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.nisp-card-body {
+  margin: 0.65rem 0 0;
+  color: var(--nisp-muted);
+  font-size: 0.83rem;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* Source-to-public flow */
+.nisp-method-flow {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto
+    minmax(0, 1fr) auto
+    minmax(0, 1fr) auto
+    minmax(0, 1fr) auto
+    minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.55rem;
+  margin: 1.25rem 0 1.8rem;
+}
+
+.nisp-flow-step {
+  display: grid;
+  grid-template-rows: 1.55rem 3.7rem 1fr;
+  row-gap: 0.55rem;
+  align-content: start;
+  width: 100%;
+  min-width: 0;
+  min-height: 8.5rem;
+  height: 100%;
+  padding: 0.9rem 0.8rem;
+  border: 1px solid var(--nisp-border);
+  border-radius: 5px;
+  background: #f8fafb;
+  color: var(--nisp-ink);
+  text-align: center;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.nisp-flow-num {
+  display: inline-flex;
+  justify-self: center;
+  align-self: start;
+  justify-content: center;
+  align-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--nisp-ink);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.nisp-flow-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.nisp-flow-copy {
+  align-self: start;
+  margin: 0;
+  color: var(--nisp-muted);
+  line-height: 1.35;
+}
+
+.nisp-flow-arrow {
+  align-self: center;
+  color: var(--nisp-muted);
+  font-size: 1.1rem;
+}
+
+/* Method topic accordions */
+.nisp-method-accordion {
+  border-top: 1px solid var(--nisp-border);
+  margin: 0.8rem 0 1.8rem;
+}
+
+.nisp-method-details {
+  border-bottom: 1px solid var(--nisp-border);
+  padding: 0;
+}
+
+.nisp-method-details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.75rem 0.25rem;
+  color: #2b4054;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.nisp-method-details summary::-webkit-details-marker { display: none; }
+.nisp-method-details summary::before { content: "▸"; display: inline-block; width: 1.1rem; color: var(--nisp-muted); }
+.nisp-method-details[open] summary::before { content: "▾"; }
+.nisp-method-details summary:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+.nisp-method-details-body {
+  padding: 0 0.25rem 0.75rem 1.35rem;
+  color: #3f4a55;
+}
+
+.nisp-method-details-body p { margin: 0.4rem 0; }
+
+/* Revisions */
+.nisp-revision-grid {
+  border-top: 1px solid var(--nisp-border);
+  margin: 0.8rem 0 1.2rem;
+}
+
+.nisp-revision-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.8fr) minmax(0, 1.7fr);
+  gap: 1.2rem;
+  padding: 0.7rem 0.25rem;
+  border-bottom: 1px solid var(--nisp-border);
+}
+
+.nisp-revision-row strong { color: var(--nisp-ink); }
+.nisp-revision-row span { color: var(--nisp-muted); }
+
+/* Technical resources */
+.nisp-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0.85rem 0 1.8rem;
+}
+
+.nisp-resource-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 7.4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #aeb8c3;
+  background: #fff;
+  color: var(--nisp-ink) !important;
+  text-decoration: none !important;
+  border-radius: 4px;
+}
+
+.nisp-resource-card strong {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.nisp-resource-card > span:not(.nisp-resource-type) {
+  color: var(--nisp-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.nisp-resource-type {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--nisp-muted) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
+}
+
+.nisp-resource-card:hover { border-color: var(--nisp-ink); background: #f8fafb; }
+.nisp-resource-card.forthcoming { background: #f4f5f6; color: var(--nisp-muted) !important; }
+.nisp-resource-card.forthcoming strong { color: #596674; }
+.nisp-resource-card.forthcoming em {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  color: var(--nisp-muted);
+  font-size: 0.74rem;
+}
+
+/* Method tables */
+#scope-differences + p + table,
+#scope-differences ~ table {
+  font-size: 0.86rem;
+}
+
+@media (max-width: 1100px) {
+  .nisp-method-hero { grid-template-columns: 1fr; }
+  .nisp-map-detail { position: static; }
+  .nisp-method-flow {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+  }
+  .nisp-flow-step {
+    grid-template-rows: auto auto auto;
+    min-height: 0;
+    text-align: left;
+  }
+  .nisp-flow-num { justify-self: start; align-self: start; }
+  .nisp-flow-title { justify-content: flex-start; }
+  .nisp-flow-arrow { text-align: center; transform: rotate(90deg); }
+}
+
+@media (max-width: 720px) {
+  .nisp-map-head,
+  .nisp-map-row,
+  .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 2.7rem minmax(0, 1fr);
+    column-gap: 0.4rem;
+  }
+
+  .nisp-map-head { margin-left: 0.2rem; margin-right: 0.2rem; }
+  .nisp-map-row { padding-left: 0.15rem; padding-right: 0.15rem; }
+  .nisp-map-row .bea,
+  .nisp-map-row .nisp { font-size: 0.78rem; }
+  .nisp-map-row.detail .bea,
+  .nisp-map-row.detail .nisp { font-size: 0.72rem; padding-left: 0.2rem; }
+  .nisp-inline-note { font-size: 0.65rem; }
+  .nisp-map-legend { gap: 0.45rem 1rem; }
+  .nisp-cards { grid-template-columns: 1fr; }
+  .nisp-resource-grid { grid-template-columns: 1fr; }
+  .nisp-revision-row { grid-template-columns: 1fr; gap: 0.2rem; }
+}

@@ -1,0 +1,1579 @@
+/* USEAL Method page — visual alignment with Homepage / Data / Release
+   Presentation-only overrides. Substantive Method content remains unchanged. */
+
+:root {
+  --method-max: 1220px;
+  --method-ink: var(--useal-navy, #102F46);
+  --method-muted: var(--nisp-muted, #6b7785);
+  --method-panel: var(--nisp-panel, #f2f4f7);
+  --method-border: var(--nisp-border, #d9dee5);
+  --method-blue: var(--useal-muted-blue, #739DB6);
+}
+
+/* ----- Page shell ----- */
+
+main.content {
+  width: 100%;
+  max-width: var(--method-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 4.5rem;
+  color: var(--method-ink);
+}
+
+#title-block-header {
+  margin-bottom: 1rem;
+}
+
+.quarto-title h1.title {
+  margin: 0;
+  color: var(--method-ink);
+  font-size: clamp(2.55rem, 4vw, 3.55rem);
+  font-weight: 750;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+main.content > p:first-of-type {
+  max-width: 920px;
+  margin-top: 0.9rem;
+  margin-bottom: 2.4rem;
+  color: var(--method-muted);
+  font-size: 1.08rem;
+  line-height: 1.62;
+}
+
+main.content > p,
+main.content > ul,
+main.content > ol {
+  max-width: 920px;
+}
+
+main.content p,
+main.content li {
+  line-height: 1.62;
+}
+
+/* ----- Section hierarchy ----- */
+
+h2.nisp-method-h2,
+.nisp-method-h2 > h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.9rem;
+  padding-top: 1.9rem;
+  border-top: 1px solid var(--method-border);
+  color: var(--method-ink);
+  font-size: clamp(1.85rem, 2.7vw, 2.35rem);
+  font-weight: 730;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+h2.nisp-method-translation-heading,
+.nisp-method-translation-heading > h2 {
+  margin-top: 1.9rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+h3.nisp-method-h3,
+.nisp-method-h3 > h3 {
+  margin-top: 1.55rem;
+  margin-bottom: 0.45rem;
+  color: var(--method-ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ----- Translation hero ----- */
+
+.nisp-method-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.25rem;
+  margin-bottom: 2.2rem;
+}
+
+.nisp-map {
+  padding: 1rem 1.15rem 1.15rem;
+  border: 1px solid var(--method-border);
+  border-radius: 9px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.nisp-map-head {
+  padding: 0.45rem 0.1rem 0.8rem;
+}
+
+.nisp-map-col {
+  color: var(--method-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.045em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.nisp-map-sub {
+  margin-top: 0.18rem;
+  color: var(--method-muted);
+  font-size: 0.72rem;
+  line-height: 1.38;
+}
+
+.nisp-map-row {
+  min-height: 47px;
+}
+
+.nisp-map-row .bea,
+.nisp-map-row .nisp {
+  color: var(--method-ink);
+}
+
+.nisp-map-row.detail .bea,
+.nisp-map-row.detail .nisp,
+.nisp-inline-note {
+  color: var(--method-muted);
+}
+
+.nisp-map-row.subtotal-row {
+  background: #f8fafb;
+}
+
+.nisp-map-section-label {
+  color: var(--method-muted);
+}
+
+.nisp-concept-trigger {
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.nisp-concept-trigger:hover,
+.nisp-concept-trigger:focus-visible {
+  color: var(--method-ink);
+}
+
+.nisp-concept-trigger:focus-visible {
+  outline: 2px solid var(--method-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.nisp-map-legend {
+  margin-top: 0.95rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--method-border);
+  color: var(--method-muted);
+}
+
+.nisp-map-cta {
+  margin-top: 1.05rem;
+}
+
+.nisp-map-btn {
+  min-height: 42px;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid var(--method-ink);
+  border-radius: 5px;
+  background: var(--method-ink);
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.nisp-map-btn:hover,
+.nisp-map-btn:focus-visible {
+  background: #16294a;
+  border-color: #16294a;
+}
+
+.nisp-map-btn:focus-visible {
+  outline: 3px solid rgba(115, 157, 182, 0.34);
+  outline-offset: 2px;
+}
+
+.nisp-map-detail {
+  position: sticky;
+  top: 5.6rem;
+  padding: 0.95rem 0.95rem 1rem;
+  border: 1px solid var(--method-border);
+  border-radius: 9px;
+  background: #f8fafb;
+}
+
+.nisp-map-detail h3 {
+  color: var(--method-ink);
+}
+
+.nisp-map-detail dl > div {
+  border-color: var(--method-border);
+}
+
+.nisp-map-detail dt {
+  color: var(--method-muted);
+}
+
+.nisp-map-detail dd {
+  color: var(--method-ink);
+}
+
+/* ----- Translate / Construct / Derive and related cards ----- */
+
+.nisp-cards {
+  gap: 0.85rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nisp-card {
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid var(--method-border);
+  border-top: 3px solid var(--method-ink);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nisp-card-title {
+  color: var(--method-ink);
+  font-size: 1.08rem;
+  font-weight: 750;
+}
+
+.nisp-card p,
+.nisp-card-meta {
+  color: var(--method-muted);
+}
+
+/* ----- Formulas / explanatory callouts ----- */
+
+.nisp-formula,
+.nisp-equation,
+.nisp-method-formula {
+  max-width: 920px;
+  margin: 1rem 0 1.3rem;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--method-blue);
+  background: #f8fafb;
+  color: var(--method-ink);
+  font-weight: 650;
+}
+
+/* ----- Scope comparison table ----- */
+
+#scope-differences ~ table,
+#scope-differences + p + table,
+main.content table {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+main.content table thead th {
+  padding: 0.78rem 0.7rem;
+  border-top: 0;
+  border-bottom: 1.5px solid var(--method-ink);
+  background: #fff;
+  color: var(--method-ink);
+  font-weight: 720;
+  vertical-align: bottom;
+}
+
+main.content table tbody td {
+  padding: 0.75rem 0.7rem;
+  border-bottom: 1px solid #e7ebef;
+  vertical-align: top;
+}
+
+main.content table tbody tr:last-child td {
+  border-bottom-color: var(--method-border);
+}
+
+/* ----- Source-to-publication workflow ----- */
+
+.nisp-method-flow {
+  gap: 0.55rem;
+  margin-top: 1rem;
+  margin-bottom: 1.55rem;
+}
+
+.nisp-flow-step {
+  min-height: 178px;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  border: 1px solid var(--method-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nisp-flow-num {
+  background: var(--method-ink);
+  color: #fff;
+}
+
+.nisp-flow-title {
+  color: var(--method-ink);
+}
+
+.nisp-flow-step p,
+.nisp-flow-copy {
+  color: var(--method-muted);
+}
+
+.nisp-flow-arrow {
+  color: #8a97a4;
+}
+
+/* ----- Methodological topics accordion ----- */
+
+.nisp-method-accordion {
+  margin-top: 1rem;
+  border-top: 1px solid var(--method-border);
+}
+
+.nisp-method-details {
+  border: 0;
+  border-bottom: 1px solid var(--method-border);
+  background: #fff;
+}
+
+.nisp-method-details summary {
+  padding: 0.82rem 0.35rem;
+  color: var(--method-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.nisp-method-details summary::before {
+  color: var(--method-muted);
+}
+
+.nisp-method-details[open] {
+  background: #fbfcfd;
+}
+
+.nisp-method-details-body {
+  max-width: 920px;
+  padding: 0 1.8rem 0.95rem;
+  color: var(--method-muted);
+}
+
+/* ----- Revision rows ----- */
+
+.nisp-revision-row {
+  padding: 0.82rem 0.25rem;
+  border-top: 1px solid var(--method-border);
+}
+
+.nisp-revision-row:last-child {
+  border-bottom: 1px solid var(--method-border);
+}
+
+.nisp-revision-row strong {
+  color: var(--method-ink);
+}
+
+.nisp-revision-row span {
+  color: var(--method-muted);
+}
+
+/* ----- Technical resources ----- */
+
+.nisp-resource-grid {
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.nisp-resource-card {
+  min-height: 8.4rem;
+  padding: 1.05rem 1.1rem;
+  border: 1px solid var(--method-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--method-ink) !important;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+
+.nisp-resource-card:hover,
+.nisp-resource-card:focus-visible {
+  border-color: var(--method-ink);
+  background: #fbfcfd;
+}
+
+.nisp-resource-card:focus-visible {
+  outline: 3px solid rgba(115, 157, 182, 0.28);
+  outline-offset: 2px;
+}
+
+.nisp-resource-card strong {
+  color: var(--method-ink);
+  font-size: 1.02rem;
+}
+
+.nisp-resource-card > span:not(.nisp-resource-type),
+.nisp-resource-card em {
+  color: var(--method-muted);
+}
+
+.nisp-resource-type {
+  color: var(--method-muted) !important;
+  font-size: 0.7rem !important;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.nisp-resource-card.forthcoming {
+  background: #f4f5f6;
+  color: var(--method-muted) !important;
+}
+
+/* ----- Quarto left TOC: page-specific institutional treatment ----- */
+
+#quarto-sidebar-toc-left {
+  padding-top: 2.4rem;
+}
+
+#quarto-sidebar-toc-left .sidebar-title,
+#quarto-sidebar-toc-left .toc-title,
+#TOC .toc-title {
+  margin-bottom: 0.65rem;
+  color: var(--method-muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#quarto-sidebar-toc-left nav,
+#TOC {
+  font-size: 0.82rem;
+}
+
+#quarto-sidebar-toc-left .nav-link,
+#TOC .nav-link {
+  padding: 0.26rem 0 0.26rem 0.7rem;
+  border-left: 2px solid transparent;
+  color: #526170;
+  line-height: 1.32;
+  text-decoration: none;
+}
+
+#quarto-sidebar-toc-left .nav-link:hover,
+#TOC .nav-link:hover {
+  color: var(--method-ink);
+}
+
+#quarto-sidebar-toc-left .nav-link.active,
+#TOC .nav-link.active {
+  border-left-color: var(--method-ink);
+  color: var(--method-ink) !important;
+  font-weight: 700;
+}
+
+/* ----- Responsive behavior ----- */
+
+@media (max-width: 1180px) {
+  main.content {
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+  }
+
+  .nisp-method-hero {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+}
+
+@media (max-width: 880px) {
+  .nisp-method-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .nisp-map-detail {
+    position: static;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .nisp-method-flow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  main.content {
+    padding: 1.8rem 1rem 3.5rem;
+  }
+
+  .quarto-title h1.title {
+    font-size: 2.5rem;
+  }
+
+  main.content > p:first-of-type {
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+  }
+
+  h2.nisp-method-h2,
+  .nisp-method-h2 > h2 {
+    margin-top: 2.4rem;
+    padding-top: 1.65rem;
+    font-size: 1.7rem;
+  }
+
+  h2.nisp-method-translation-heading,
+  .nisp-method-translation-heading > h2 {
+    margin-top: 1.35rem;
+    padding-top: 0;
+  }
+
+  .nisp-map {
+    padding: 0.75rem 0.65rem 0.85rem;
+    border-radius: 7px;
+  }
+
+  .nisp-map-head,
+  .nisp-map-row,
+  .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  }
+
+  .nisp-map-row .bea,
+  .nisp-map-row .nisp {
+    font-size: 0.8rem;
+  }
+
+  .nisp-map-row.detail .bea,
+  .nisp-map-row.detail .nisp {
+    font-size: 0.73rem;
+  }
+
+  .nisp-map-legend {
+    gap: 0.55rem 0.8rem;
+  }
+
+  .nisp-cards,
+  .nisp-resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main.content .table-responsive,
+  main.content > table {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .nisp-map-head {
+    display: none;
+  }
+
+  .nisp-map-row,
+  .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr);
+  }
+
+  .nisp-map-row {
+    min-height: 44px;
+  }
+
+  .nisp-map-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nisp-method-details-body {
+    padding-left: 1.35rem;
+    padding-right: 0.6rem;
+  }
+}
+
+
+/* ----- Method v2 refinements ----- */
+
+/* Keep the selected-concept panel beside the map on ordinary laptop widths.
+   The global legacy stylesheet stacks at 1100px, so explicitly restore the
+   two-column layout through the tablet-wide range; stack only below 880px. */
+@media (min-width: 881px) and (max-width: 1100px) {
+  .nisp-method-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(225px, 250px);
+    gap: 1rem;
+  }
+
+  .nisp-map-detail {
+    position: sticky;
+    top: 5.6rem;
+    max-width: none;
+  }
+}
+
+/* Replace the legacy filled translation heading band with the newer
+   restrained section-label treatment used elsewhere on the site. */
+h2.nisp-method-translation-heading,
+.nisp-method-translation-heading > h2 {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.85rem;
+  padding: 0 0 0.55rem;
+  border: 0;
+  border-bottom: 1px solid var(--method-border);
+  background: transparent;
+  color: var(--method-ink);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.075em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* Slightly tighten the opening copy-to-map transition. */
+.nisp-method-translation-heading + p {
+  margin-top: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+/* Keep the workflow compact without changing its information architecture. */
+.nisp-flow-step p,
+.nisp-flow-copy {
+  margin-bottom: 0;
+  line-height: 1.48;
+}
+
+@media (max-width: 880px) {
+  .nisp-flow-step {
+    min-height: 0;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v3 — authoritative final visual pass                                */
+/* ========================================================================== */
+
+/* Use the actual Method content column as the responsive reference. */
+main.content {
+  container-type: inline-size;
+  container-name: method-content;
+}
+
+/* Explicitly defeat the legacy global Method breakpoint that stacks the
+   Selected Concept panel at <=1100px. Side-by-side is the default whenever
+   the actual Method content column is wide enough. */
+.nisp-method-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(225px, 245px) !important;
+  gap: 1rem;
+}
+
+.nisp-map-detail {
+  position: sticky !important;
+  top: 5.6rem;
+  max-width: none !important;
+}
+
+/* Stack based on component/content width, not browser viewport width. */
+@container method-content (max-width: 790px) {
+  .nisp-method-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nisp-map-detail {
+    position: static !important;
+    max-width: 720px !important;
+  }
+}
+
+/* Conservative fallback for browsers without container-query support. */
+@supports not (container-type: inline-size) {
+  @media (max-width: 860px) {
+    .nisp-method-hero {
+      grid-template-columns: 1fr !important;
+    }
+
+    .nisp-map-detail {
+      position: static !important;
+      max-width: 720px !important;
+    }
+  }
+}
+
+/* The legacy stylesheet applies the old gray band to the translation section.
+   Reset the section wrapper and render its H2 as a restrained eyebrow/divider. */
+section.nisp-method-translation-heading,
+.nisp-method-translation-heading {
+  margin-top: 1.6rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+section.nisp-method-translation-heading > h2,
+.nisp-method-translation-heading > h2,
+h2.nisp-method-translation-heading {
+  display: block !important;
+  width: 100%;
+  margin: 0 0 0.75rem !important;
+  padding: 0 0 0.55rem !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--method-border) !important;
+  background: transparent !important;
+  color: var(--method-muted) !important;
+  font-size: 0.76rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.085em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+.nisp-method-translation-heading > h2 + p,
+h2.nisp-method-translation-heading + p {
+  margin-top: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+/* Source-to-publication process: one coherent rail rather than five
+   independent PowerPoint-like cards. */
+.nisp-method-flow {
+  padding: 1rem 0.9rem;
+  border: 1px solid var(--method-border);
+  border-radius: 9px;
+  background: #f8fafb;
+}
+
+.nisp-flow-step {
+  min-height: 150px;
+  padding: 0.65rem 0.45rem 0.7rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.nisp-flow-title {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.nisp-flow-step p,
+.nisp-flow-copy {
+  color: var(--method-muted);
+  font-size: 0.78rem;
+  line-height: 1.43;
+}
+
+.nisp-flow-arrow {
+  color: #8a97a4;
+  opacity: 0.9;
+}
+
+/* On narrow layouts the process becomes a vertical rail and should no longer
+   retain desktop card height. */
+@media (max-width: 1100px) {
+  .nisp-method-flow {
+    padding: 0.9rem 1rem;
+  }
+
+  .nisp-flow-step {
+    min-height: 0;
+    padding: 0.45rem 0.25rem;
+  }
+}
+
+/* Reference-oriented modules get the same selective subtle shading used on
+   the Data page. Narrative Method sections remain white. */
+section#methodological-topics,
+section#technical-resources {
+  margin-top: 2.75rem;
+  padding: 1.75rem 1.2rem 1.35rem;
+  border-top: 1px solid var(--method-border);
+  border-bottom: 1px solid var(--method-border);
+  background: #fbfcfd;
+}
+
+section#methodological-topics > h2,
+section#technical-resources > h2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+section#methodological-topics .nisp-method-accordion {
+  margin-top: 0.9rem;
+  border: 1px solid var(--method-border);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+
+section#methodological-topics .nisp-method-details {
+  background: #fff;
+}
+
+section#methodological-topics .nisp-method-details:last-child {
+  border-bottom: 0;
+}
+
+section#methodological-topics .nisp-method-details[open] {
+  background: #f8fafb;
+}
+
+/* Technical-resource cards remain white against the shaded section, mirroring
+   Data's Shared Metadata treatment. */
+section#technical-resources .nisp-resource-grid {
+  margin-top: 0.9rem;
+  margin-bottom: 1.35rem;
+}
+
+section#technical-resources .nisp-resource-card {
+  background: #fff;
+}
+
+section#technical-resources .nisp-resource-card.forthcoming {
+  background: #f3f5f7;
+}
+
+/* Tighten the transition out of Methodological topics; the section wrapper
+   now supplies its own visual separation. */
+section#methodological-topics + section.nisp-method-h2 {
+  margin-top: 2.2rem;
+}
+
+@media (max-width: 760px) {
+  section#methodological-topics,
+  section#technical-resources {
+    margin-left: -0.35rem;
+    margin-right: -0.35rem;
+    padding: 1.45rem 0.85rem 1.1rem;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v4 — final layout + section hierarchy refinement                    */
+/* ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/* Translation map + Selected Concept                                         */
+/* -------------------------------------------------------------------------- */
+
+/* The desktop/tablet grammar is intentionally two-column.  The Selected
+   Concept panel should remain beside the map until a genuinely narrow mobile
+   viewport.  This explicitly overrides both legacy styles.css and the v3
+   container-query experiment. */
+main.content {
+  container-type: normal !important;
+}
+
+.nisp-method-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 225px !important;
+  gap: 0.9rem !important;
+  align-items: start;
+}
+
+.nisp-map-detail {
+  position: sticky !important;
+  top: 5.6rem;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0;
+  padding: 0.85rem 0.85rem 0.9rem;
+}
+
+/* Compact the map horizontally by reducing the arrow/connector column.
+   The source and USEAL concept columns retain priority. */
+.nisp-map-head,
+.nisp-map-row,
+.nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 78px minmax(0, 0.92fr) !important;
+}
+
+.nisp-map .arrow {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .nisp-method-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nisp-map-detail {
+    position: static !important;
+    max-width: 720px !important;
+  }
+
+  .nisp-map-head,
+  .nisp-map-row,
+  .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 34px minmax(0, 0.92fr) !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Major-section hierarchy                                                    */
+/* -------------------------------------------------------------------------- */
+
+/* Method is long-form technical documentation.  Use one separator before
+   narrative sections and avoid boxing every H2 between two rules. */
+h2.nisp-method-h2,
+.nisp-method-h2 > h2 {
+  margin-top: 2.55rem !important;
+  margin-bottom: 0.8rem !important;
+  padding-top: 1.65rem !important;
+  padding-bottom: 0 !important;
+  border-top: 1px solid var(--method-border) !important;
+  border-bottom: 0 !important;
+  color: var(--method-ink) !important;
+  font-size: clamp(1.72rem, 2.3vw, 2.12rem) !important;
+  line-height: 1.08 !important;
+}
+
+/* The translation-map section is the opening module, so it should not inherit
+   a narrative-section top divider. */
+section.nisp-method-translation-heading,
+.nisp-method-translation-heading {
+  margin-top: 1.55rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+section.nisp-method-translation-heading > h2,
+.nisp-method-translation-heading > h2,
+h2.nisp-method-translation-heading {
+  margin: 0 0 0.72rem !important;
+  padding: 0 0 0.5rem !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--method-border) !important;
+  color: var(--method-muted) !important;
+  font-size: 0.74rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.085em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+}
+
+/* Shaded reference sections establish their own boundaries; their H2s do not
+   need an additional rule above or below. */
+section#methodological-topics,
+section#technical-resources {
+  margin-top: 2.35rem !important;
+  padding-top: 1.55rem;
+  padding-bottom: 1.2rem;
+}
+
+section#methodological-topics > h2,
+section#technical-resources > h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0.8rem !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+/* Reduce the double-spacing created by shaded-section padding + next-section
+   margin. */
+section#methodological-topics + section.nisp-method-h2 {
+  margin-top: 1.35rem !important;
+}
+
+section#technical-resources {
+  margin-bottom: 0 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Process rail                                                               */
+/* -------------------------------------------------------------------------- */
+
+/* Retain the successful single-rail design, but make it a little denser. */
+.nisp-method-flow {
+  padding: 0.8rem 0.8rem !important;
+}
+
+.nisp-flow-step {
+  min-height: 132px !important;
+  padding: 0.5rem 0.35rem 0.55rem !important;
+}
+
+.nisp-flow-num {
+  width: 1.85rem;
+  height: 1.85rem;
+  font-size: 0.72rem;
+}
+
+.nisp-flow-title {
+  margin-top: 0.45rem;
+}
+
+.nisp-flow-step p,
+.nisp-flow-copy {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 1100px) {
+  .nisp-flow-step {
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  h2.nisp-method-h2,
+  .nisp-method-h2 > h2 {
+    margin-top: 2.15rem !important;
+    padding-top: 1.35rem !important;
+    font-size: 1.62rem !important;
+  }
+
+  section#methodological-topics,
+  section#technical-resources {
+    margin-top: 2rem !important;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v6 — explicit Quarto page-columns child placement                   */
+/* ========================================================================== */
+
+/*
+Quarto adds `page-columns page-full` to the Method hero wrapper even when the
+source uses a plain div. Its page-column system also assigns grid placement to
+direct children. Explicitly place the translation map and Selected Concept in
+our intended two-column grid so those Quarto child-placement rules cannot stack
+them in the same column.
+*/
+
+.nisp-method-hero.page-columns,
+.nisp-method-hero.page-full,
+.nisp-method-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 225px !important;
+  gap: 0.9rem !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.nisp-method-hero.page-columns > .nisp-map,
+.nisp-method-hero > .nisp-map {
+  grid-column: 1 / 2 !important;
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.nisp-method-hero.page-columns > .nisp-map-detail,
+.nisp-method-hero > .nisp-map-detail {
+  grid-column: 2 / 3 !important;
+  grid-row: 1 !important;
+  align-self: start !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  position: sticky !important;
+  top: 5.6rem;
+}
+
+/* Keep the compact connector column introduced in v4. */
+.nisp-method-hero .nisp-map-head,
+.nisp-method-hero .nisp-map-row,
+.nisp-method-hero .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 72px minmax(0, 0.92fr) !important;
+}
+
+/* Stack only on genuinely narrow screens, and explicitly override the desktop
+   child placement as well as the parent grid. */
+@media (max-width: 720px) {
+  .nisp-method-hero.page-columns,
+  .nisp-method-hero.page-full,
+  .nisp-method-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nisp-method-hero.page-columns > .nisp-map,
+  .nisp-method-hero > .nisp-map {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .nisp-method-hero.page-columns > .nisp-map-detail,
+  .nisp-method-hero > .nisp-map-detail {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    position: static !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .nisp-method-hero .nisp-map-head,
+  .nisp-method-hero .nisp-map-row,
+  .nisp-method-hero .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 34px minmax(0, 0.92fr) !important;
+  }
+}
+
+/* ========================================================================== */
+/* Method v7 — map-first layout with right-gutter Selected Concept            */
+/* ========================================================================== */
+
+/*
+Architecture:
+- Quarto may decorate the outer .nisp-method-hero-shell with page-columns /
+  page-full.
+- The inner .nisp-method-hero is our layout authority and stays in the normal
+  Method content column.
+- The translation map keeps the full normal content width.
+- On wide screens the Selected Concept panel is positioned into the otherwise
+  unused right gutter, so it does not steal width from the map.
+*/
+
+/* Neutralize the v6 same-grid treatment on the inner hero. */
+.nisp-method-hero {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.nisp-method-hero > .nisp-map {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Preserve compact connectors without shrinking either concept column. */
+.nisp-method-hero .nisp-map-head,
+.nisp-method-hero .nisp-map-row,
+.nisp-method-hero .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 56px minmax(0, 0.92fr) !important;
+}
+
+.nisp-map {
+  padding-left: 0.95rem;
+  padding-right: 0.95rem;
+}
+
+/* Default/fallback: panel below the map, full width. */
+.nisp-method-hero > .nisp-map-detail {
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 1rem;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Wide documentation layout: break only the detail panel into the right
+   gutter. The map remains exactly the normal Method content width. */
+@media (min-width: 1280px) {
+  .nisp-method-hero > .nisp-map-detail {
+    position: absolute !important;
+    top: 0 !important;
+    left: calc(100% + 1rem) !important;
+    width: 228px !important;
+    max-width: 228px !important;
+    margin-top: 0 !important;
+    z-index: 2;
+  }
+
+  .nisp-method-hero {
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Very wide displays can afford a slightly more comfortable detail panel. */
+@media (min-width: 1480px) {
+  .nisp-method-hero > .nisp-map-detail {
+    left: calc(100% + 1.1rem) !important;
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+}
+
+/* Mobile: retain the stacked layout and shorten the connector further. */
+@media (max-width: 720px) {
+  .nisp-method-hero .nisp-map-head,
+  .nisp-method-hero .nisp-map-row,
+  .nisp-method-hero .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 30px minmax(0, 0.92fr) !important;
+  }
+
+  .nisp-method-hero > .nisp-map-detail {
+    width: 100% !important;
+    margin-top: 0.85rem;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v8 — native Quarto article / page-right layout                      */
+/* ========================================================================== */
+
+/*
+Use Quarto's article grid as intended:
+- the ordinary Method body occupies the readable body column;
+- .column-page-right expands only the translation hero into the right margin;
+- the map keeps the body-width share;
+- Selected Concept uses the extra right-margin share.
+*/
+
+/* Let Quarto own the page/article geometry rather than imposing a separate
+   full-width main-content box. */
+main.content {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* The outer shell is placed by Quarto's native .column-page-right class.
+   It should not introduce a second custom breakout. */
+.nisp-method-hero-shell {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Inner layout: map receives the flexible body share, detail receives the
+   margin-style fixed share. */
+.nisp-method-hero {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 240px !important;
+  gap: 1rem !important;
+  align-items: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.nisp-method-hero > .nisp-map {
+  display: block !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.nisp-method-hero > .nisp-map-detail {
+  position: sticky !important;
+  top: 5.6rem !important;
+  left: auto !important;
+  right: auto !important;
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  width: 240px !important;
+  max-width: 240px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Compact connector column; preserve flexible source/target concept columns. */
+.nisp-method-hero .nisp-map-head,
+.nisp-method-hero .nisp-map-row,
+.nisp-method-hero .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 54px minmax(0, 0.92fr) !important;
+}
+
+/* On narrower layouts, stop trying to preserve the margin panel: protect the
+   map first and stack Selected Concept below it. */
+@media (max-width: 1050px) {
+  .nisp-method-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nisp-method-hero > .nisp-map {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .nisp-method-hero > .nisp-map-detail {
+    position: static !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0.9rem !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .nisp-method-hero .nisp-map-head,
+  .nisp-method-hero .nisp-map-row,
+  .nisp-method-hero .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 30px minmax(0, 0.92fr) !important;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v9 — normal body-width map + outboard Selected Concept              */
+/* ========================================================================== */
+
+/*
+Desired geometry:
+- the translation map follows the exact same left/right margins as ordinary
+  Method content;
+- the Selected Concept panel does not participate in the map width;
+- on sufficiently wide screens it sits in the existing right margin;
+- on narrower screens it stacks below the map.
+
+The page remains Quarto article layout.  Unlike v8, the hero shell itself does
+NOT use .column-page-right, because that widens the entire hero.
+*/
+
+.nisp-method-hero-shell {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+/* The normal body-width map is the in-flow element. */
+.nisp-method-hero {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.nisp-method-hero > .nisp-map {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Keep the connector compact; concept columns get the remaining width. */
+.nisp-method-hero .nisp-map-head,
+.nisp-method-hero .nisp-map-row,
+.nisp-method-hero .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 0.9fr) !important;
+}
+
+/* Default: stack beneath the map. */
+.nisp-method-hero > .nisp-map-detail {
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0.9rem 0 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Wide article layout: place Selected Concept in the existing right margin
+   without changing the map/body width. */
+@media (min-width: 1220px) {
+  .nisp-method-hero > .nisp-map-detail {
+    position: absolute !important;
+    top: 0 !important;
+    left: calc(100% + 1.15rem) !important;
+    width: 230px !important;
+    max-width: 230px !important;
+    margin: 0 !important;
+    z-index: 3;
+  }
+}
+
+/* Very wide screens can use most of the configured 250px margin. */
+@media (min-width: 1480px) {
+  .nisp-method-hero > .nisp-map-detail {
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .nisp-method-hero .nisp-map-head,
+  .nisp-method-hero .nisp-map-row,
+  .nisp-method-hero .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 30px minmax(0, 0.9fr) !important;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v10 — native Quarto body + margin columns                           */
+/* ========================================================================== */
+
+/*
+The translation module now uses Quarto's article-layout columns directly:
+  .column-body   -> translation map
+  .column-margin -> Selected Concept
+
+No custom breakout geometry is needed.
+*/
+
+/* Map block: ordinary Method body column. */
+.nisp-method-map-block {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.nisp-method-map-block > .nisp-map {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Selected Concept: Quarto's native right-margin column. */
+.nisp-method-detail-block {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  align-self: start;
+}
+
+.nisp-method-detail-block > .nisp-map-detail {
+  position: sticky !important;
+  top: 5.6rem !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Keep the map compact horizontally without clipping either concept column. */
+.nisp-method-map-block .nisp-map-head,
+.nisp-method-map-block .nisp-map-row,
+.nisp-method-map-block .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 0.9fr) !important;
+}
+
+/* Old hero wrappers are no longer present. Neutralize any residual rules if a
+   browser still has cached CSS or Quarto preserves a class unexpectedly. */
+.nisp-method-hero-shell,
+.nisp-method-hero {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  position: static !important;
+  display: block !important;
+}
+
+/* At smaller sizes Quarto collapses margin content naturally. Give the card
+   comfortable spacing if it moves below the body. */
+@media (max-width: 1050px) {
+  .nisp-method-detail-block > .nisp-map-detail {
+    position: static !important;
+    margin-top: 0.9rem !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .nisp-method-map-block .nisp-map-head,
+  .nisp-method-map-block .nisp-map-row,
+  .nisp-method-map-block .nisp-map-section-label {
+    grid-template-columns: minmax(0, 1fr) 30px minmax(0, 0.9fr) !important;
+  }
+}
+
+
+/* ========================================================================== */
+/* Method v11 — final translation-module visual tuning                        */
+/* ========================================================================== */
+
+/* Keep the Selected Concept card as a compact documentation sidebar rather
+   than allowing Quarto's margin column to stretch it toward the viewport edge. */
+.nisp-method-detail-block {
+  width: 236px !important;
+  max-width: 236px !important;
+  justify-self: start !important;
+  align-self: start !important;
+}
+
+.nisp-method-detail-block > .nisp-map-detail {
+  width: 236px !important;
+  max-width: 236px !important;
+}
+
+/* Give the USEAL side a little more breathing room after the connector.
+   This improves visual balance without lengthening the arrows or reducing the
+   space available to the BEA concept labels. */
+.nisp-method-map-block .nisp-map-row > .nisp,
+.nisp-method-map-block .nisp-map-head > :last-child,
+.nisp-method-map-block .nisp-map-section-label > :last-child {
+  padding-left: 0.65rem;
+}
+
+/* Preserve the compact connector and a slightly more generous USEAL concept
+   column. */
+.nisp-method-map-block .nisp-map-head,
+.nisp-method-map-block .nisp-map-row,
+.nisp-method-map-block .nisp-map-section-label {
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 0.96fr) !important;
+}
+
+/* If Quarto collapses the margin on smaller layouts, restore natural width. */
+@media (max-width: 1050px) {
+  .nisp-method-detail-block,
+  .nisp-method-detail-block > .nisp-map-detail {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .nisp-method-map-block .nisp-map-row > .nisp,
+  .nisp-method-map-block .nisp-map-head > :last-child,
+  .nisp-method-map-block .nisp-map-section-label > :last-child {
+    padding-left: 0.35rem;
+  }
+}
+
+/* EARL post-rebrand: align operation-card body copy on desktop. */
+@media (min-width: 721px) {
+  .nisp-operation-cards .nisp-card-summary {
+    min-height: 4.35em;
+  }
+}
+
+/* ----- Primary formal-publication resource ----- */
+
+section#technical-resources .nisp-resource-card-primary {
+  border-color: var(--method-ink);
+  border-top: 3px solid var(--method-ink);
+  background: #f8fafb;
+}
+
+section#technical-resources .nisp-resource-card-primary .nisp-resource-type {
+  color: var(--method-ink) !important;
+}
+
+section#technical-resources .nisp-resource-card-primary:hover,
+section#technical-resources .nisp-resource-card-primary:focus-visible {
+  border-color: var(--method-ink);
+  background: #f3f7f9;
+}
+
+/* EARL Quarto 1.9 top-level TOC collapse repair
+ *
+ * Quarto currently renders the first-level document TOC list as
+ * <ul class="collapse"> on these left-TOC article pages. Bootstrap
+ * therefore hides the entries while leaving the TOC title visible.
+ * Re-open only the direct top-level TOC list; nested responsive
+ * behavior elsewhere is untouched.
+ */
+#TOC > ul.collapse {
+  display: block !important;
+  height: auto !important;
+  visibility: visible !important;
+}

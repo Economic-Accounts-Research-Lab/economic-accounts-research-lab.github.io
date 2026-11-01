@@ -1,0 +1,116 @@
+/* ==========================================================
+   USEAL Statistical Release Archive
+   Page-specific presentation only.
+   Publication-state logic remains in releases/index.qmd.
+   ========================================================== */
+
+.nisp-release-archive-state {
+  margin-top: 1.6rem;
+  padding: 1.6rem 1.7rem;
+  background: #fff;
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 8px;
+}
+
+.nisp-release-archive-state-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.nisp-release-archive-state-head h2 {
+  margin: 0.35rem 0 0;
+  color: var(--nisp-ink, #1f3347);
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.nisp-release-archive-status {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 999px;
+  background: var(--nisp-panel, #f2f4f7);
+  color: var(--nisp-ink, #1f3347);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nisp-release-archive-state-copy {
+  max-width: 800px;
+  margin: 0;
+  color: var(--nisp-muted, #6b7785);
+  line-height: 1.65;
+}
+
+.nisp-release-archive-state-note {
+  max-width: 860px;
+  margin: 1.15rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--nisp-border, #d9dee5);
+  color: var(--nisp-muted, #6b7785);
+  line-height: 1.6;
+}
+
+.nisp-release-archive-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.35rem;
+  overflow: hidden;
+  background: var(--nisp-panel, #f2f4f7);
+  border: 1px solid var(--nisp-border, #d9dee5);
+  border-radius: 8px;
+}
+
+.nisp-release-archive-principle {
+  padding: 1.15rem 1.25rem;
+}
+
+.nisp-release-archive-principle + .nisp-release-archive-principle {
+  border-left: 1px solid var(--nisp-border, #d9dee5);
+}
+
+.nisp-release-archive-principle strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--nisp-ink, #1f3347);
+  font-size: 0.98rem;
+}
+
+.nisp-release-archive-principle span {
+  display: block;
+  color: var(--nisp-muted, #6b7785);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .nisp-release-archive-state-head {
+    display: block;
+  }
+
+  .nisp-release-archive-status {
+    margin-top: 0.85rem;
+  }
+
+  .nisp-release-archive-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .nisp-release-archive-principle + .nisp-release-archive-principle {
+    border-left: 0;
+    border-top: 1px solid var(--nisp-border, #d9dee5);
+  }
+}
+
+/* The pending-state heading is card content, not a page section heading. */
+.nisp-release-archive-state-head h2 {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

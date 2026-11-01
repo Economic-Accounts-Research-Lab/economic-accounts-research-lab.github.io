@@ -1,0 +1,384 @@
+/* ---------- Charts page layout ---------- */
+/* Hierarchy on the left, chart in the middle, insight card on the right. */
+.nisp-ch-layout {
+  display: grid;
+  /* Filters on the left, the chart across the rest of the page */
+  grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-left: -2.5rem;
+  margin-right: -1.5rem;
+}
+
+.nisp-ch-layout .nisp-panel { margin-bottom: 1rem; }
+
+.nisp-ch-intro {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--nisp-muted);
+  margin-bottom: 1rem;
+}
+
+/* ---------- Control row: measure, frequency, range ---------- */
+.nisp-ch-controls { background: #fff; }
+
+.nisp-ch-controlrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 2rem;
+}
+
+.nisp-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.nisp-control > span { color: var(--nisp-muted); }
+
+.nisp-select {
+  border: 1px solid var(--nisp-border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--nisp-ink);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.nisp-segs { display: flex; gap: 0.3rem; }
+
+.nisp-seg {
+  border: 1px solid var(--nisp-border);
+  background: #fff;
+  color: var(--nisp-ink);
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.nisp-seg:hover:not(:disabled) { border-color: var(--nisp-ink); }
+
+.nisp-seg.active {
+  border: 1.5px solid var(--nisp-ink);
+  background: var(--nisp-accent-bg);
+  font-weight: 700;
+}
+
+.nisp-seg.is-pending,
+.nisp-seg:disabled {
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+.nisp-seg:focus-visible,
+.nisp-select:focus-visible { outline: 2px solid var(--nisp-ink); outline-offset: 2px; }
+
+.nisp-control-note { font-size: 0.78rem; color: var(--nisp-muted); }
+
+.nisp-years {
+  width: 3.5rem;
+  border: 1px solid var(--nisp-border);
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- Chart ---------- */
+.nisp-ch-chart { background: #fff; overflow-x: auto; }
+
+.nisp-ch-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--nisp-ink);
+  margin-bottom: 0.5rem;
+}
+
+.nisp-ch-note {
+  font-size: 0.75rem;
+  color: var(--nisp-muted);
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Related views ---------- */
+.nisp-ch-views { background: #fff; }
+
+.nisp-ch-related {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.nisp-ch-related-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nisp-ink);
+  margin-right: 0.4rem;
+}
+
+.nisp-ch-related .nisp-seg.active { cursor: default; }
+
+.nisp-ch-related-note {
+  width: 100%;
+  font-size: 0.75rem;
+  color: var(--nisp-muted);
+}
+
+/* ---------- Insight card (pending) ---------- */
+.nisp-insight.is-pending {
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+}
+
+.nisp-insight-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.nisp-insight-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nisp-ink);
+}
+
+.nisp-pending-tag {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px dashed var(--nisp-border);
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+}
+
+.nisp-insight-sub { font-size: 0.78rem; margin: 0 0 0.5rem; }
+
+.nisp-insight-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+}
+
+.nisp-insight-list li { margin-bottom: 0.2rem; }
+
+/* ---------- Explore link ---------- */
+.nisp-explore-btn {
+  display: block;
+  text-align: center;
+  background: #1f3864;
+  color: #fff !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.nisp-explore-btn:hover { background: #16294a; }
+
+@media (max-width: 900px) {
+  .nisp-ch-layout {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Quarto's .btn classes would otherwise fill these dark (see controls.css) */
+.nisp-seg.btn {
+  background: #fff;
+  color: var(--nisp-ink);
+  border: 1px solid var(--nisp-border);
+}
+
+.nisp-seg.btn.active {
+  background: var(--nisp-accent-bg);
+  border: 1.5px solid var(--nisp-ink);
+  font-weight: 700;
+}
+
+.nisp-seg.btn:disabled,
+.nisp-seg.btn.is-pending {
+  background: var(--nisp-panel);
+  color: var(--nisp-muted);
+  border: 1px dashed var(--nisp-border);
+  opacity: 1;
+}
+
+/* ---------- Compare Industries: the filter box doubles as the picker ---------- */
+.nisp-level-row.is-disabled { opacity: 0.45; }
+
+.nisp-compare-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: -0.3rem 0 0.5rem;
+}
+
+.nisp-compare-count { font-size: 0.7rem; color: var(--nisp-muted); }
+.nisp-compare-tools { margin-left: auto; display: flex; gap: 0.5rem; }
+.nisp-compare-tools .nisp-link { font-size: 0.7rem; }
+
+/* ---------- Registry-driven controls ---------- */
+.nisp-control-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--nisp-muted);
+  margin: 0.9rem 0 0.35rem;
+}
+
+.nisp-family-list .nisp-control-label:first-child { margin-top: 0; }
+
+.nisp-family-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--nisp-border);
+  background: #fff;
+  color: var(--nisp-ink);
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.nisp-family-btn:hover { border-color: var(--nisp-ink); }
+
+.nisp-family-btn.selected,
+.nisp-family-btn.btn.selected {
+  border: 1.5px solid var(--nisp-ink);
+  background: var(--nisp-accent-bg);
+  font-weight: 700;
+}
+
+.nisp-family-btn.btn {
+  background: #fff;
+  color: var(--nisp-ink);
+  border: 1px solid var(--nisp-border);
+}
+
+.nisp-freq-block .nisp-segs { margin-bottom: 0.3rem; }
+/* Frequency sits at the top of the box, so it needs no leading gap */
+.nisp-freq-block.top .nisp-control-label { margin-top: 0; }
+
+/* A row whose renderer belongs to the chart workstream */
+.nisp-pending-chart {
+  border: 1px dashed var(--nisp-border);
+  border-radius: 4px;
+  padding: 1rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--nisp-muted);
+  background: var(--nisp-panel);
+}
+
+.nisp-pending-chart .nisp-ch-title { color: var(--nisp-ink); }
+.nisp-pending-chart code { font-size: 0.8rem; }
+
+/* The registry row behind the chart on screen */
+.nisp-registry-note dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 0.75rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+}
+
+.nisp-registry-note dt { color: var(--nisp-muted); font-family: monospace; }
+.nisp-registry-note dd { margin: 0; color: var(--nisp-ink); }
+
+/* Chart family as a row of buttons beneath the chart */
+.nisp-ch-families { background: #fff; }
+
+.nisp-ch-families .nisp-family-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nisp-ch-families .nisp-control-label {
+  margin: 0 0.4rem 0 0;
+  flex: none;
+}
+
+.nisp-ch-families .nisp-family-btn,
+.nisp-ch-families .nisp-family-btn.btn {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 0;
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+}
+
+/* Match Income Statements: provenance belongs in the right-hand chart column,
+   shares the card edges, and keeps detailed technical metadata expandable. */
+.nisp-ch-main { min-width: 0; }
+.nisp-ch-main .nisp-footnote { width: 100%; margin: 0; min-width: 0; }
+.nisp-ch-main .nisp-footnote .nisp-provenance {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--nisp-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--nisp-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+.nisp-ch-main .nisp-provenance-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  color: var(--nisp-ink);
+}
+.nisp-ch-main .nisp-vintage-date { font-size: 0.78rem; color: var(--nisp-muted); }
+.nisp-ch-main .nisp-provenance p { margin: 0.55rem 0 0; }
+.nisp-ch-main .nisp-source-details {
+  margin-top: 0.8rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--nisp-border);
+}
+.nisp-ch-main .nisp-source-details > summary {
+  cursor: pointer;
+  color: var(--nisp-ink);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.nisp-ch-main .nisp-source-details > summary:focus-visible,
+.nisp-ch-main .nisp-source-link:focus-visible {
+  outline: 2px solid var(--nisp-ink);
+  outline-offset: 3px;
+}
+.nisp-ch-main .nisp-source-details[open] > summary { margin-bottom: 0.55rem; }
+.nisp-ch-main .nisp-source-details-body { padding: 0 0.15rem 0.3rem; }
+.nisp-ch-main .nisp-source-details-body code { overflow-wrap: anywhere; font-size: 0.85em; }
+.nisp-ch-main .nisp-source-details .nisp-source-link {
+  color: #2364a1;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+  text-decoration-thickness: 1px;
+}
+.nisp-ch-main .nisp-source-details .nisp-source-link:hover { color: #173f68; }
+.nisp-ch-main .nisp-source-tables {
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 1.2rem;
+}
+.nisp-ch-main .nisp-source-tables li { margin-bottom: 0.15rem; }

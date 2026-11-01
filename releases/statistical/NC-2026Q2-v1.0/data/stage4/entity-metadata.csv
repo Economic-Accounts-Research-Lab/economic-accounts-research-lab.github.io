@@ -1,0 +1,102 @@
+"entity_id","entity_label","entity_type","parent_entity_id","hierarchy_level","source_code","notes"
+"Ag","Agriculture","industry","PvtGds","4","11",
+"Ag.Farms","Farms","industry","Ag","4","111CA","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Ag.Forest","Forestry, fishing, and related activities","industry","Ag","4","113FF","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"All","All Industries","industry",,"1","II",
+"ArtAcmdFd","Arts, Entertainment & Food Services","industry","PvtSrvs","4","7",
+"ArtAcmdFd.AcmdFdSrv","Accommodation and food services","industry","ArtAcmdFd","4","72","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"ArtAcmdFd.AcmdFdSrv.Acmd","Accommodation","industry","ArtAcmdFd.AcmdFdSrv","5","721","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"ArtAcmdFd.AcmdFdSrv.FdSrv","Food services and drinking places","industry","ArtAcmdFd.AcmdFdSrv","5","722","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"ArtAcmdFd.Art","Arts, entertainment, and recreation","industry","ArtAcmdFd","4","71","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"ArtAcmdFd.Art.Amuse","Amusements, gambling, and recreation industries","industry","ArtAcmdFd.Art","5","713","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"ArtAcmdFd.Art.PerfArt","Performing arts, spectator sports, museums, and related activities","industry","ArtAcmdFd.Art","5","711AS","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Constr","Construction","industry","PvtGds","4","23",
+"corporate","U.S. Domestic Corporate Business","corporate",,"1",,"Top-level USEAL Corporate Income Statement scope."
+"EduHth","Education & Health","industry","PvtSrvs","4","6",
+"EduHth.Edu","Educational services","industry","EduHth","4","61","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth","Health care and social assistance","industry","EduHth","4","62","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth.Amb","Ambulatory health care services","industry","EduHth.Hth","5","621","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth.Hosp","Hospitals","industry","EduHth.Hth","5","622","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth.HospNurs.Bridge","Hospitals and nursing and residential care facilities (historical bridge)","industry","EduHth.Hth","5",,"Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth.Nurs","Nursing and residential care facilities","industry","EduHth.Hth","5","623","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"EduHth.Hth.SciAst","Social assistance","industry","EduHth.Hth","5","624","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fed","Federal","industry","Gov","3","GF",
+"Fed.Enterp","Government enterprises","industry","Fed","4","GFE","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fed.Gen","General government","industry","Fed","4","GFG","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fed.Gen.Def","National defense","industry","Fed.Gen","5","GFGD","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fed.Gen.XDef","Nondefense","industry","Fed.Gen","5","GFGN","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin","Finance & Real Estate","industry","PvtSrvs","4","FIRE",
+"Fin.FinIns","Finance and insurance","industry","Fin","4","52","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.FinIns.FedBks","Federal Reserve banks, credit intermediation, and related activities","industry","Fin.FinIns","5","521CI","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.FinIns.Funds","Funds, trusts, and other financial vehicles","industry","Fin.FinIns","5","525","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.FinIns.Ins","Insurance carriers and related activities","industry","Fin.FinIns","5","524","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.FinIns.Sec","Securities, commodity contracts, and investments","industry","Fin.FinIns","5","523","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.REnt","Real estate and rental and leasing","industry","Fin","4","53","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.REnt.RE","Real estate","industry","Fin.REnt","5","531","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Fin.REnt.Rental","Rental and leasing services and lessors of intangible assets","industry","Fin.REnt","5","532RL","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Gov","Government","industry","All","2","G",
+"Info","Information","industry","PvtSrvs","4","51",
+"Info.Bcast","Broadcasting and telecommunications","industry","Info","4","513","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Info.DataProc","Information and data processing services","industry","Info","4","514","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Info.MotionPic","Motion picture and sound recording industries","industry","Info","4","512","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Info.Publ","Publishing industries (includes software)","industry","Info","4","511","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg","Manufacturing","industry","PvtGds","4","31G",
+"Mfg.DurGds","Durable goods","industry","Mfg","4","33DG","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.CompElec","Computer and electronic products","industry","Mfg.DurGds","5","334","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.Elec","Electrical equipment, appliances, and components","industry","Mfg.DurGds","5","335","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.FabMetal","Fabricated metal products","industry","Mfg.DurGds","5","332","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.Furn","Furniture and related products","industry","Mfg.DurGds","5","337","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.Machinery","Machinery","industry","Mfg.DurGds","5","333","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.Misc","Miscellaneous manufacturing","industry","Mfg.DurGds","5","339","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.MotoVeh","Motor vehicles, bodies and trailers, and parts","industry","Mfg.DurGds","5","3361MV","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.OthTrans","Other transportation equipment","industry","Mfg.DurGds","5","3364OT","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.PrimMetal","Primary metals","industry","Mfg.DurGds","5","331","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.Wood","Wood products","industry","Mfg.DurGds","5","321","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.DurGds.XMetal","Nonmetallic mineral products","industry","Mfg.DurGds","5","327","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds","Nondurable goods","industry","Mfg","4","31ND","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Apparel","Apparel and leather and allied products","industry","Mfg.XDurGds","5","315AL","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Chem","Chemical products","industry","Mfg.XDurGds","5","325","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Food","Food and beverage and tobacco products","industry","Mfg.XDurGds","5","311FT","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Paper","Paper products","industry","Mfg.XDurGds","5","322","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.PetrolCoal","Petroleum and coal products","industry","Mfg.XDurGds","5","324","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Plast","Plastics and rubber products","industry","Mfg.XDurGds","5","326","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Print","Printing and related support activities","industry","Mfg.XDurGds","5","323","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Mfg.XDurGds.Text","Textile mills and textile product mills","industry","Mfg.XDurGds","5","313TT","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Min","Mining","industry","PvtGds","4","21",
+"Min.OilGas","Oil and gas extraction","industry","Min","4","211","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Min.Suppt","Support activities for mining","industry","Min","4","213","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Min.XOilGas","Mining, except oil and gas","industry","Min","4","212","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"national","U.S. Domestic Economy","national",,"1",,"Top-level USEAL National Income Statement scope."
+"OthSrvsXGov","Other Services","industry","PvtSrvs","4","81",
+"PrfSrv","Professional & Business Services","industry","PvtSrvs","4","PROF",
+"PrfSrv.AdmWst","Administrative and waste management services","industry","PrfSrv","4","56","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.AdmWst.AdmSup","Administrative and support services","industry","PrfSrv.AdmWst","5","561","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.AdmWst.WstRem","Waste management and remediation services","industry","PrfSrv.AdmWst","5","562","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.Mgmt","Management of companies and enterprises","industry","PrfSrv","4","55","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.Sci","Professional, scientific, and technical services","industry","PrfSrv","4","54","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.Sci.Comp","Computer systems design and related services","industry","PrfSrv.Sci","5","5415","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.Sci.Legal","Legal services","industry","PrfSrv.Sci","5","5411","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"PrfSrv.Sci.Misc","Miscellaneous professional, scientific, and technical services","industry","PrfSrv.Sci","5","5412OP","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Pvt","Private Industries","industry","All","2","PVT",
+"PvtGds","Private Goods","industry","Pvt","3","PGOOD",
+"PvtSrvs","Private Services","industry","Pvt","3","PSERV",
+"Rtl","Retail Trade","industry","PvtSrvs","4","44RT",
+"Rtl.FoodBev","Food and beverage stores","industry","Rtl","4","445","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Rtl.GenMerch","General merchandise stores","industry","Rtl","4","452","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Rtl.MotoVeh","Motor vehicle and parts dealers","industry","Rtl","4","441","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Rtl.Oth","Other retail","industry","Rtl","4","4A0","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"StLoc","State & Local","industry","Gov","3","GSL",
+"StLoc.Enterp","Government enterprises","industry","StLoc","4","GSLE","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"StLoc.Gen","General government","industry","StLoc","4","GSLG","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Tech","Information-communications-technology-producing industries","industry",,,"ICT","Official BEA cross-cutting industry aggregate (ICT); not assigned to the mutually exclusive USEAL Industry hierarchy."
+"Trans","Transportation & Warehousing","industry","PvtSrvs","4","48TW",
+"Trans.Air","Air Transportation","industry","Trans","5","481",
+"Trans.Oth","Other transportation and support activities","industry","Trans","4","487OS","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Trans.Pipe","Pipeline transportation","industry","Trans","4","486","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Trans.Rail","Rail transportation","industry","Trans","4","482","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Trans.Transit","Transit and ground passenger transportation","industry","Trans","4","485","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Trans.Truck","Truck Transportation","industry","Trans","5","484",
+"Trans.Warehs","Warehousing and storage","industry","Trans","4","493","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Trans.Water","Water transportation","industry","Trans","4","483","Uses BEA hierarchy/name fields where curated display hierarchy fields are unavailable."
+"Utl","Utilities","industry","PvtSrvs","4","22",
+"Wholsl","Wholesale Trade","industry","PvtSrvs","4","42",

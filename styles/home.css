@@ -1,0 +1,542 @@
+/* USEAL Homepage — release-first product landing page */
+
+.nisp-home {
+  --home-max: 1220px;
+  --home-ink: var(--useal-navy, #102F46);
+  --home-muted: var(--nisp-muted, #6b7785);
+  --home-panel: var(--nisp-panel, #f2f4f7);
+  --home-border: var(--nisp-border, #d9dee5);
+  --home-accent: #e8f1ec;
+  --home-profit: #7f9e8d;
+  --home-blue: var(--useal-muted-blue, #739DB6);
+  color: var(--home-ink);
+  margin: 0 auto;
+}
+
+.nisp-home-inner {
+  max-width: var(--home-max);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.nisp-home-section {
+  padding: 3.25rem 0;
+  border-top: 1px solid var(--home-border);
+}
+
+.nisp-home-hero {
+  padding: 3.25rem 0 4rem;
+}
+
+.nisp-home-eyebrow {
+  color: var(--home-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.nisp-home-hero h1 {
+  max-width: 920px;
+  margin: 0;
+  color: var(--home-ink);
+  font-size: clamp(2.6rem, 5.5vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.nisp-home-hero-copy {
+  max-width: 900px;
+  margin: 1.35rem 0 0;
+  color: var(--home-muted);
+  font-size: 1.16rem;
+  line-height: 1.6;
+}
+
+.nisp-home-hero-actions,
+.nisp-home-release-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.nisp-home-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: 0.65rem 1rem;
+  border-radius: 5px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.nisp-home-action-primary {
+  color: #fff !important;
+  background: var(--home-ink);
+  border: 1px solid var(--home-ink);
+}
+
+.nisp-home-action-primary:hover {
+  background: #15283b;
+  border-color: #15283b;
+}
+
+.nisp-home-action-secondary {
+  color: var(--home-ink) !important;
+  background: #fff;
+  border: 1px solid var(--home-border);
+}
+
+.nisp-home-action-secondary:hover {
+  border-color: var(--home-ink);
+  background: #fff;
+}
+
+.nisp-home-action.is-disabled {
+  color: #8a96a2 !important;
+  background: #f7f8fa;
+  border: 1px solid #e2e6eb;
+  cursor: default;
+}
+
+/* Latest release */
+.nisp-home-latest {
+  background: #fff;
+}
+
+.nisp-home-release-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+}
+
+.nisp-home-release-heading h2 {
+  margin: 0;
+  color: var(--home-ink);
+  font-size: clamp(2.15rem, 4vw, 3.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+.nisp-home-release-period {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--home-muted);
+  font-weight: 400;
+}
+
+.nisp-home-release-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  color: var(--home-muted);
+  font-size: 0.92rem;
+}
+
+.nisp-home-meta-dot { color: #a1aab4; }
+
+.nisp-home-candidate-notice {
+  margin-top: 1.15rem;
+  padding: 0.72rem 0.9rem;
+  border-left: 4px solid #a67a25;
+  background: #fbf6e8;
+  color: #665126;
+  font-size: 0.9rem;
+}
+
+.nisp-home-featured {
+  margin-top: 2rem;
+  padding: 1.25rem 1rem 0.35rem;
+  border: 1px solid var(--home-border);
+  border-radius: 9px;
+  background: #fff;
+}
+
+.nisp-home-featured-heading {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  color: var(--home-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nisp-home-featured-subhead {
+  margin: 0 0 1rem;
+  color: var(--home-muted);
+}
+
+.nisp-home-sankey-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nisp-home-sankey-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nisp-home-mobile-flow { display: none; }
+
+.nisp-home-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.nisp-home-highlight {
+  padding: 1.15rem 1.2rem;
+  background: var(--home-panel);
+  border-top: 3px solid var(--home-ink);
+}
+
+.nisp-home-highlight-label {
+  color: var(--home-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+.nisp-home-highlight-value {
+  margin-top: 0.35rem;
+  color: var(--home-ink);
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.nisp-home-highlight-change {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.3rem;
+  color: var(--home-muted);
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Explore product cards */
+.nisp-home-section-heading {
+  margin: 0;
+  color: var(--home-ink);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  letter-spacing: -0.025em;
+}
+
+.nisp-home-section-copy {
+  max-width: none;
+  width: 100%;
+  margin: 0.65rem 0 0;
+  color: var(--home-muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.nisp-home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.nisp-home-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+  padding: 1.35rem;
+  border: 1px solid var(--home-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nisp-home-product-card h3 {
+  margin: 1.1rem 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.nisp-home-product-card p {
+  margin: 0 0 1rem;
+  color: var(--home-muted);
+  line-height: 1.5;
+}
+
+.nisp-home-card-link {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--home-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nisp-home-card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.nisp-home-card-visual {
+  height: 54px;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.nisp-home-card-table {
+  display: grid;
+  width: 78px;
+  gap: 5px;
+}
+
+.nisp-home-card-table span {
+  height: 5px;
+  background: #a8b5c2;
+}
+
+.nisp-home-card-table span:nth-child(1),
+.nisp-home-card-table span:nth-child(3) { width: 100%; }
+.nisp-home-card-table span:nth-child(2) { width: 78%; }
+.nisp-home-card-table span:nth-child(4) { width: 90%; }
+
+.nisp-home-card-chart span {
+  width: 8px;
+  background: var(--home-blue);
+}
+.nisp-home-card-chart span:nth-child(1) { height: 18px; }
+.nisp-home-card-chart span:nth-child(2) { height: 32px; }
+.nisp-home-card-chart span:nth-child(3) { height: 25px; }
+.nisp-home-card-chart span:nth-child(4) { height: 46px; }
+.nisp-home-card-chart span:nth-child(5) { height: 37px; }
+
+.nisp-home-card-data {
+  align-items: center;
+}
+.nisp-home-card-data::before {
+  content: "↓";
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #91a2b2;
+  border-radius: 50%;
+  color: var(--home-ink);
+  font-size: 1.5rem;
+}
+
+/* Method / translation */
+.nisp-home-method-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(380px, 1.05fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.nisp-home-method-copy p {
+  color: var(--home-muted);
+  line-height: 1.58;
+}
+
+.nisp-home-translation {
+  border: 1px solid var(--home-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.nisp-home-translation-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px minmax(0, 0.8fr);
+  align-items: center;
+  min-height: 66px;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--home-border);
+}
+
+.nisp-home-translation-row:last-child { border-bottom: 0; }
+.nisp-home-translation-source { color: var(--home-muted); }
+.nisp-home-translation-arrow { text-align: center; color: #8a97a4; font-size: 1.25rem; }
+.nisp-home-translation-target { font-weight: 700; }
+
+.nisp-home-credibility {
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid var(--home-border);
+}
+
+.nisp-home-credibility-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  color: var(--home-muted);
+}
+
+.nisp-home-credibility-links { display: flex; gap: 1rem; }
+.nisp-home-credibility a { color: var(--home-ink); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .nisp-home-section { padding: 2.75rem 0; }
+  .nisp-home-hero { padding: 3rem 0 3.25rem; }
+  .nisp-home-release-heading { grid-template-columns: 1fr; gap: 0.5rem; }
+  .nisp-home-highlights,
+  .nisp-home-product-grid { grid-template-columns: 1fr; }
+  .nisp-home-product-card { min-height: 190px; }
+  .nisp-home-method-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 680px) {
+  .nisp-home-inner { padding-left: 1rem; padding-right: 1rem; }
+  .nisp-home-hero h1 { font-size: 2.6rem; }
+  .nisp-home-hero-actions .nisp-home-action,
+  .nisp-home-release-actions .nisp-home-action { width: 100%; }
+  .nisp-home-release-meta { align-items: flex-start; flex-direction: column; gap: 0.35rem; }
+  .nisp-home-meta-dot { display: none; }
+  .nisp-home-sankey-wrap { display: none; }
+  .nisp-home-mobile-flow { display: block; margin-top: 0.5rem; }
+  .nisp-home-mobile-flow-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--home-border);
+    background: #fff;
+  }
+  .nisp-home-mobile-flow-item span { color: var(--home-muted); }
+  .nisp-home-mobile-flow-item strong { text-align: right; }
+  .nisp-home-mobile-flow-item.is-revenue { border-left: 4px solid var(--home-ink); }
+  .nisp-home-mobile-flow-item.is-profit { border-left: 4px solid var(--home-profit); }
+  .nisp-home-mobile-flow-item.is-cost { border-left: 4px solid var(--home-blue); }
+  .nisp-home-mobile-flow-branch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    margin-top: 0.55rem;
+  }
+  .nisp-home-mobile-flow-branch.is-secondary { margin-left: 1.2rem; }
+  .nisp-home-highlight-change { flex-wrap: wrap; }
+  .nisp-home-translation-row { grid-template-columns: minmax(0, 1fr) 28px minmax(0, 0.8fr); padding: 0 0.75rem; }
+}
+
+@media print {
+  .nisp-home-action.is-disabled,
+  .nisp-home-candidate-notice { display: none !important; }
+}
+
+/* Homepage v2 refinements */
+.nisp-home-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nisp-home-hero-content {
+  min-width: 0;
+}
+
+.nisp-home-logo-placeholder {
+  width: 170px;
+  height: 170px;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.8rem;
+  border: 1px dashed #b6c1cb;
+  border-radius: 14px;
+  background: #fafbfc;
+  color: var(--home-muted);
+}
+
+.nisp-home-logo-placeholder-mark {
+  width: 78px;
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+}
+
+.nisp-home-logo-placeholder-mark span {
+  display: block;
+  border-radius: 2px;
+  background: #8da6bb;
+}
+
+.nisp-home-logo-placeholder-mark span:nth-child(1) {
+  grid-row: 1 / 3;
+  background: #36546f;
+}
+
+.nisp-home-logo-placeholder-mark span:nth-child(2) {
+  background: #7697b1;
+}
+
+.nisp-home-logo-placeholder-mark span:nth-child(3) {
+  background: #b2c3d1;
+}
+
+.nisp-home-logo-placeholder-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nisp-home-featured {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.nisp-home-sankey-wrap {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+@media (max-width: 850px) {
+  .nisp-home-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .nisp-home-logo-placeholder {
+    justify-self: start;
+    width: 130px;
+    height: 130px;
+  }
+}
+
+
+/* USEAL identity integration */
+.useal-home-symbol-wrap {
+  width: 170px;
+  height: 170px;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.useal-home-symbol {
+  display: block;
+  width: 118px;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .useal-home-symbol-wrap {
+    justify-self: start;
+    width: 130px;
+    height: 110px;
+  }
+  .useal-home-symbol { width: 92px; }
+}

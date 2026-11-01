@@ -1,0 +1,14 @@
+key,value
+release_id,NC-2026Q2-v1.0
+release_title,National + Corporate Income — 2026 Q2
+reference_period,2026Q2
+release_version,1.0
+publication_timestamp,2026-11-01T12:08:14-05:00
+publication_timezone,America/New_York
+publication_target_date,2026-11-01
+source_cutoff_at,2026-09-30T08:30:00-04:00
+release_status,Published
+latest_annual_period,2025
+nisp_site_url,https://economic-accounts-research-lab.github.io
+opening_visual,final_sankey
+recession_shading,true

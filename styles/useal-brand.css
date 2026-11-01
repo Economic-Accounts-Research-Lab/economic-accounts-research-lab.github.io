@@ -1,0 +1,161 @@
+/* USEAL public identity — United States Economic Accounting Lab */
+
+:root {
+  --useal-navy: #102F46;
+  --useal-muted-blue: #739DB6;
+  --useal-nav-text: #445463;
+  --useal-nav-border: #d9dee5;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Site-wide navbar                                                            */
+/* -------------------------------------------------------------------------- */
+
+.navbar {
+  --bs-navbar-color: var(--useal-nav-text);
+  --bs-navbar-hover-color: var(--useal-navy);
+  --bs-navbar-active-color: var(--useal-navy);
+  min-height: 62px;
+  padding-top: 0.48rem;
+  padding-bottom: 0.48rem;
+  background: #fff !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--useal-nav-border) !important;
+  box-shadow: none !important;
+}
+
+.navbar .container-fluid,
+.navbar .navbar-container {
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 1.75rem;
+  padding-top: 0.22rem;
+  padding-bottom: 0.22rem;
+}
+
+.navbar-brand img,
+.navbar-logo {
+  display: block;
+  width: auto;
+  max-width: 150px;
+  max-height: 31px;
+}
+
+.navbar .navbar-nav {
+  align-items: center;
+  gap: 0.08rem;
+}
+
+.navbar .navbar-nav .nav-link {
+  position: relative;
+  margin: 0 0.08rem;
+  padding: 0.58rem 0.64rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--useal-nav-text) !important;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: color 120ms ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: var(--useal-navy) !important;
+}
+
+.navbar .navbar-nav .nav-link.active {
+  color: var(--useal-navy) !important;
+  font-weight: 700;
+}
+
+.navbar .navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0.64rem;
+  right: 0.64rem;
+  bottom: 0.16rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--useal-navy);
+}
+
+.navbar .navbar-nav .nav-link:focus-visible,
+.navbar-brand:focus-visible,
+.navbar .quarto-search-button:focus-visible,
+.navbar .aa-DetachedSearchButton:focus-visible {
+  outline: 2px solid var(--useal-navy);
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+.navbar #quarto-search {
+  margin-left: 0.55rem;
+}
+
+.navbar .quarto-search-button,
+.navbar .aa-DetachedSearchButton {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0.35rem !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+  color: var(--useal-nav-text) !important;
+  opacity: 0.72;
+  box-shadow: none !important;
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+.navbar .quarto-search-button:hover,
+.navbar .aa-DetachedSearchButton:hover {
+  background: #f5f7f8 !important;
+  color: var(--useal-navy) !important;
+  opacity: 1;
+}
+
+.navbar .quarto-search-button .bi,
+.navbar .aa-DetachedSearchButton .bi,
+.navbar .aa-DetachedSearchButtonIcon {
+  color: currentColor !important;
+}
+
+.navbar-toggler {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus-visible {
+  outline: 2px solid var(--useal-navy);
+  outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    margin-right: 1rem;
+  }
+
+  .navbar .navbar-nav {
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    margin: 0;
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+  }
+
+  .navbar .navbar-nav .nav-link.active::after {
+    left: 0.35rem;
+    right: auto;
+    width: 30px;
+  }
+
+  .navbar #quarto-search {
+    margin-left: 0;
+  }
+}
